@@ -38,7 +38,7 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.5"
+#define SHORT_BUILD_VERSION "1.2.5.4"
 
 #define HARDWARE_VERSION "R73B"
 
@@ -50,16 +50,16 @@
  * 
  */
 
-//#define MACHINE_X40V1
+#define MACHINE_X40V1
 
-#define MACHINE_X40V2
+//#define MACHINE_X40V2
 
 #ifdef MACHINE_X40V1
-#define MACHINE_NAME "X40V1"
+#define MACHINE_NAME "X40V1 PRO"
 #endif
 
 #ifdef MACHINE_X40V2
-#define MACHINE_NAME "X40V2"
+#define MACHINE_NAME "X40V2 PRO"
 #endif
 
 /**
@@ -212,8 +212,8 @@
 //#define TEMP_SENSOR_1_AS_REDUNDANT
 #define MAX_REDUNDANT_TEMP_SENSOR_DIFF 10
 
-#define TEMP_RESIDENCY_TIME     10  // (seconds) Time to wait for hotend to "settle" in M109
-#define TEMP_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
+#define TEMP_RESIDENCY_TIME      5  // (seconds) Time to wait for hotend to "settle" in M109
+#define TEMP_WINDOW              2  // (°C) Temperature proximity for the "temperature reached" timer
 #define TEMP_HYSTERESIS          3  // (°C) Temperature proximity considered "close enough" to the target
 
 #define TEMP_BED_RESIDENCY_TIME 10  // (seconds) Time to wait for bed to "settle" in M190
@@ -267,9 +267,9 @@
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
   // X40
-  #define DEFAULT_Kp 12.2
-  #define DEFAULT_Ki 0.77
-  #define DEFAULT_Kd 48.41
+  #define DEFAULT_Kp 12.54
+  #define DEFAULT_Ki 0.89
+  #define DEFAULT_Kd 43.99
 
 #endif // PIDTEMP
 
@@ -437,7 +437,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.14, 94.14, 400, 93}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.90, 94.90, 410, 93}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -472,7 +472,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION           800    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -486,11 +486,11 @@
  */
 #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 10.0
-  #define DEFAULT_YJERK 10.0
+  #define DEFAULT_XJERK   8.0
+  #define DEFAULT_YJERK   8.0
   #define DEFAULT_ZJERK  10.0
 
-  //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
+  #define TRAVEL_EXTRA_XYJERK 10.0     // Additional jerk allowance for all travel moves
 
   //#define LIMITED_JERK_EDITING        // Limit edit via M205 or LCD to DEFAULT_aJERK * 2
   #if ENABLED(LIMITED_JERK_EDITING)
@@ -508,7 +508,7 @@
  *   http://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.032 // (mm) Distance from real junction edge
 #endif
 
 
@@ -1127,8 +1127,8 @@
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
   #define NOZZLE_PARK_POINT { 0, 0, 20 }
-  #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE 100    // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_XY_FEEDRATE 200   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
+  #define NOZZLE_PARK_Z_FEEDRATE 200    // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 

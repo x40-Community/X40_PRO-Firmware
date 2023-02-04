@@ -53,7 +53,7 @@ void DGUS_Screen_Speed::KeyProcess()
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_DEC)
 			{
-				if (temp_feedrate > 50)
+				if (temp_feedrate > 25)
 					temp_feedrate -= 5;
 				ShowFeedrate();
 			}
