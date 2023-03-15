@@ -1585,7 +1585,7 @@ const char MMSG_RESTORE_SETTING_LINE[8][99] PROGMEM = {
  	"\r\n\r\n  工場出荷時の設定に戻しますか?",
 	"\r\n\r\n Estás seguro de restaurar a la predeterminada?",
     "\r\n\r\n Etes-vous sur de vouloir restaurer les paramètres d'usine?",
-    "\r\n\r\n  Sind Sie sicher, dass Sie den Drucker auf Werkseinstellungen zurücksetzen mochten?",
+    "\r\n\r\n  Sind Sie sicher, dass Sie den Drucker auf die Werkseinstellungen zurücksetzen moechten?",
     "\r\n\r\n Sei sicuro di ripristinare le impostazioni di fabbrica?",
     "\r\n\r\nBen je zeker dat je de fabrieksinstellingen wilt terugzetten?"
 };
@@ -1684,7 +1684,7 @@ const char MMSG_SELF_TEST_TITLE[8][25] PROGMEM = {
  	"セルフテスト",
 	"Autoprueba de encendido",
     "Publier",
-    "Druckerselbstest (POST)",
+    "Druckerselbstest",
     "Inviare",
     "Zelftest"
 };
@@ -1695,7 +1695,7 @@ const char MMSG_SKIP[8][16] PROGMEM = {
  	" スキップ",
 	"  Saltar",
     "  Sauter",
-    "Uberspringen",
+    "Auslassen",
     "  Salta",
     " Overslaan"
 };
@@ -1706,7 +1706,7 @@ const char MMSG_SELF_TEST_ITEM1[8][35] PROGMEM = {
  	"左ノズル加熱:",
 	"Boquilla izquierda:",
 	"Buse gauche Chauffage:",
-	"Aufheizen der linken Düse:",
+	"Aufheizen Düse links:",
 	"CloLeft ugello di riscaldamento:",
     "Linker Printkop Opwarmen:"
 };
@@ -1717,7 +1717,7 @@ const char MMSG_SELF_TEST_ITEM2[8][35] PROGMEM = {
  	"右ノズル加熱:",
 	"Boquilla derecha:",
 	"Buse droite chauffage:",
-	"Aufheizen der rechten Düse:",
+	"Aufheizen Düse rechts:",
 	"Riscaldamento dell'ugello destro:",
     "Rechter Printkop Opwarmen:"
 };
@@ -1728,7 +1728,7 @@ const char MMSG_SELF_TEST_ITEM3[8][32] PROGMEM = {
  	"ベッド暖房:",
 	"Plataforma",
     "Chauffage du lit:",
-    "Aufheizen des Druckbettes:",
+    "Aufheizen Druckbett:",
     "Letto riscaldamento:",
     "Bed Opwarmen:"
 };
@@ -1739,7 +1739,7 @@ const char MMSG_SELF_TEST_ITEM4[8][26] PROGMEM = {
  	"X軸ホーミング:",
 	"X Axis Homing:",
     "X Homing:",
-    "Grundstellung X-Axe:",
+    "Grundstellung X-Achse:",
     "X Homing:",
     "X As Homing"
 };
@@ -1750,7 +1750,7 @@ const char MMSG_SELF_TEST_ITEM5[8][26] PROGMEM = {
  	"Y軸ホーミング:",
 	"Y Axis Homing:",
     "Et Homing:",
-    "Grundstellung Y-Axe:",
+    "Grundstellung Y-Achse:",
     "E Homing:",
     "Y As Homing"
 };
@@ -1761,7 +1761,7 @@ const char MMSG_SELF_TEST_ITEM6[8][26] PROGMEM = {
  	"Z軸ホーミング:",
 	"Z Axis Homing:",
     "Z Homing:",
-    "Grundstellung Z-Axe:",
+    "Grundstellung Z-Achse:",
     "Z Homing:",
     "Z As Homing"
 };
@@ -1816,7 +1816,7 @@ const char MMSG_SELF_TEST_RUNOUT_OK[8][17] PROGMEM = {
  	"フィラメント挿入",
 	"Filamento ok",
     "Filament OK",
-    "Filament OK",
+    "Filament Ok",
     "Filamento OK",
     "Filament OK"
 };

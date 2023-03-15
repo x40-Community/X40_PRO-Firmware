@@ -100,13 +100,18 @@ void WTGcodeinfo::parse(char* filename)
 					duration_t tempT = info.i_totaltime;
 					tempT.toDigital(info.totaltime);
 				}
-				else if (startsWith(linebuffer, "FilamentUsed:"))
+		/**		else if (startsWith(linebuffer, "FilamentUsed:"))
+		*		{
+		*			getvalue(info.filament);
+		*			info.f_filament = atof(info.filament) / (float)335.4 + 1;
+		*			uint16_t tempi = info.f_filament;
+		*			memset(info.filament, 0, 10);
+		*			sprintf_P(info.filament, PSTR("%ig"), tempi);
+		*		}
+		*/
+				else if (startsWith(linebuffer, "Tool:"))
 				{
 					getvalue(info.filament);
-					info.f_filament = atof(info.filament) / (float)335.4 + 1;
-					uint16_t tempi = info.f_filament;
-					memset(info.filament, 0, 10);
-					sprintf_P(info.filament, PSTR("%ig"), tempi);
 				}
                 else if (startsWith(linebuffer, "MINX:"))
 				{

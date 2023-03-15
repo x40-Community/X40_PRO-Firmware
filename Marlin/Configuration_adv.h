@@ -170,7 +170,7 @@
    * below 2.
    */ 
   // Weedo Value WATCH_TEMP_PERIOD 20
-  #define WATCH_TEMP_PERIOD 24                // Seconds
+  #define WATCH_TEMP_PERIOD 26                // Seconds
   #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 
@@ -186,7 +186,7 @@
    */
   // Weedo WATCH_BED_TEMP_PERIOD                60 
   // Weedo WATCH_BED_TEMP_INCREASE               2
-  #define WATCH_BED_TEMP_PERIOD                35 // Seconds
+  #define WATCH_BED_TEMP_PERIOD                35 //  Seconds
   #define WATCH_BED_TEMP_INCREASE               1 // Degrees Celsius
 #endif
 
@@ -1480,7 +1480,7 @@
     #define TOOLCHANGE_FIL_EXTRA_PRIME          8  // (mm)
     #define TOOLCHANGE_FIL_RETRACT_LENGTH       5   // (mm)
     #define TOOLCHANGE_FIL_SWAP_RETRACT_SPEED 3000  // (mm/m)
-    #define TOOLCHANGE_FIL_SWAP_PRIME_SPEED   600  // (mm/m)
+    #define TOOLCHANGE_FIL_SWAP_PRIME_SPEED   200  // (mm/m) war 600
   #endif
 
   /**
@@ -1506,7 +1506,7 @@
  */
 #define ADVANCED_PAUSE_FEATURE
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
-  #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
+  #define PAUSE_PARK_RETRACT_FEEDRATE         70  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
                                                   // This short retract is done immediately, before parking the nozzle.
   #define FILAMENT_CHANGE_UNLOAD_FEEDRATE     10  // (mm/s) Unload filament feedrate. This can be pretty fast.

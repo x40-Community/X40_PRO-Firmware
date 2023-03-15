@@ -38,7 +38,7 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.5.4"
+#define SHORT_BUILD_VERSION "1.2.5.5"
 
 #define HARDWARE_VERSION "R73B"
 
@@ -50,9 +50,10 @@
  * 
  */
 
-#define MACHINE_X40V1
-
+//#define MACHINE_X40V1
 //#define MACHINE_X40V2
+//#define MACHINE_X40V1_BMG
+//#define MACHINE_X40V2_BMG
 
 #ifdef MACHINE_X40V1
 #define MACHINE_NAME "X40V1 PRO"
@@ -60,6 +61,14 @@
 
 #ifdef MACHINE_X40V2
 #define MACHINE_NAME "X40V2 PRO"
+#endif
+
+#ifdef MACHINE_X40V1_BMG
+#define MACHINE_NAME "X40V1 PRO BMG"
+#endif
+
+#ifdef MACHINE_X40V2_BMG
+#define MACHINE_NAME "X40V2 PRO BMG"
 #endif
 
 /**
@@ -436,15 +445,35 @@
  * Default Axis Steps Per Unit (steps/mm)
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
+ * 
+ * Weedo X40 Extruder => X94.34 Y94.20 Z404.24 E93.00
+ * BMG Clone Extruder => X94.40 Y94.50 Z401.10 E332.00
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.90, 94.90, 410, 93}
+#ifdef MACHINE_X40V1
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.34, 94.20, 404.24, 93.00}
+#endif
+
+#ifdef MACHINE_X40V2
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.34, 94.20, 404.24, 93.00}
+#endif
+
+#ifdef MACHINE_X40V1_BMG
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.40, 94.50, 401.10, 332.00}
+#endif
+
+#ifdef MACHINE_X40V2_BMG
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.40, 94.50, 401.10, 332.00}
+#endif
+
+
+
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 130, 20, 25}
+#define DEFAULT_MAX_FEEDRATE          { 200, 130, 120, 25}
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -668,7 +697,18 @@
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
 #define INVERT_E0_DIR true
-#define INVERT_E1_DIR true
+#ifdef MACHINE_X40V1
+#define INVERT_E1_DIR true  //  bei Weedo Extruder true
+#endif
+#ifdef MACHINE_X40V2
+#define INVERT_E1_DIR true  // bei Weedo Extruder true
+#endif
+#ifdef MACHINE_X40V1_BMG
+#define INVERT_E1_DIR false  // bei BMG Extruder false
+#endif
+#ifdef MACHINE_X40V2_BMG
+#define INVERT_E1_DIR false  // bei BMG Extruder false
+#endif
 #define INVERT_E2_DIR true
 #define INVERT_E3_DIR false
 #define INVERT_E4_DIR false
@@ -710,6 +750,24 @@
 #endif
 
 #ifdef MACHINE_X40V2
+#define X_MIN_POS -47 
+#define Y_MIN_POS -11
+#define Z_MIN_POS 0
+#define X_MAX_POS 355
+#define Y_MAX_POS 303
+#define Z_MAX_POS 405
+#endif
+
+#ifdef MACHINE_X40V1_BMG
+#define X_MIN_POS -47
+#define Y_MIN_POS -2
+#define Z_MIN_POS 0
+#define X_MAX_POS 355
+#define Y_MAX_POS 310
+#define Z_MAX_POS 405
+#endif
+
+#ifdef MACHINE_X40V2_BMG
 #define X_MIN_POS -47 
 #define Y_MIN_POS -11
 #define Z_MIN_POS 0

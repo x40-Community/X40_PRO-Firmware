@@ -102,7 +102,7 @@ void DGUS_Screen_RestoreSetting::ShowReport(void)
 	char* buffer = (char*)malloc(TEXTLEN_2BINFO_ITEM);
 
 	memset(buffer, 0, TEXTLEN_2BINFO_ITEM);
-	sprintf(buffer, "Home offset: M218 T1 X%.2f Y%.2f Z%.2f\r\nZ-Probe Offset: M851 X%.2f Y%.2f Z%.2f\r\nCalibration: M92 X%.2f Y%.2f Z%.2f E%.2f\r\nAcceleration: M201 X%.0f Y%.0f Z%.0f E%.0f\r\nMax Feedrate: M203 X%.0f Y%.0f Z%.0f E%.0f\r\nAcceleration: M204 P%.0f R%.0f T%.0f\r\nLinear Advance: M900 K-factor %.1f",
+	sprintf(buffer, "Home offset: M218 T1 X%.2f Y%.2f Z%.2f\r\nZ-Probe Offset: M851 X%.2f Y%.2f Z%.2f\r\nE-Steps: M92 X%.2f Y%.2f Z%.2f E%.2f\r\nAcceleration: M201 X%.0f Y%.0f Z%.0f E%.0f\r\nMax Feedrate: M203 X%.0f Y%.0f Z%.0f E%.0f\r\nAcceleration: M204 P%.0f R%.0f T%.0f\r\nLinear Advance: M900 K-factor %.2f",
 					 LINEAR_UNIT(hotend_offset[1].x),
 					 LINEAR_UNIT(hotend_offset[1].y),
 					 LINEAR_UNIT(hotend_offset[1].z),

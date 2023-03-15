@@ -28,8 +28,8 @@ void DGUS_Screen_PrintEnd::Init()
 	dserial.SendString(ADDR_PRINTEND_TEXT_AGAIN, MMSG_PRINTEND_AGAIN[wtvar_language], 20);
 	dserial.SendString(ADDR_PRINTEND_TEXT_FILENAME, MMSG_PRINTEND_FILE[wtvar_language], 30);
 	dserial.SendString(ADDR_PRINTEND_TEXT_TIME, MMSG_PRINTEND_TIME[wtvar_language], 30);
-	dserial.SendString(ADDR_PRINTEND_TEXT_FILAMENT, MMSG_PRINTEND_FILAMENT[wtvar_language], 30);
-
+/**	dserial.SendString(ADDR_PRINTEND_TEXT_FILAMENT, MMSG_PRINTEND_FILAMENT[wtvar_language], 30);
+*/
 	dserial.SendUnicodeString(ADDR_PRINT_VALUE_FILENAME, dgus.jobinfo.fileinfo.buffer, dgus.jobinfo.fileinfo.len, 32);
 
 	char b[14];
@@ -39,8 +39,8 @@ void DGUS_Screen_PrintEnd::Init()
 	elapsed.toDigital(b, has_days);
 	dserial.SendString(ADDR_PRINTEND_VALUE_TIME, b, 16);
 
-	dserial.SendString(ADDR_PRINTEND_VALUE_FILAMENT, gcodeinfo.info.filament, 16);
-
+/**	dserial.SendString(ADDR_PRINTEND_VALUE_FILAMENT, gcodeinfo.info.filament, 16);
+*/
 	count = JUMP_TO_POWEROFF_MENU;
 	holdontime = getcurrenttime();
 }

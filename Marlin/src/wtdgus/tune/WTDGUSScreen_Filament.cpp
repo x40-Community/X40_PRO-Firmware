@@ -171,7 +171,7 @@ void DGUS_Screen_Filament::Update()
 				if (filamentType != FT_TPU)
 				{
 					queue.enqueue_now_P("G1 E5 F100");
-					queue.enqueue_now_P("G1 E-40 F300");
+					queue.enqueue_now_P("G1 E-40 F200"); // Weedo F300
 				}
 				else
 				{

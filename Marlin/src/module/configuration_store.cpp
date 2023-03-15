@@ -2804,12 +2804,14 @@ void MarlinSettings::reset() {
     }
   #endif
 
+// Default settings 1=on 0=off
+
 	wtvar_gohome = 0;
 	wtvar_showWelcome = 1;
 	wtvar_goDebugMenu = 0;
-	wtvar_enablefilamentruncout = 0;
+	wtvar_enablefilamentruncout = 0; 
 	wtvar_enablepoweroff = 1;
-	wtvar_enableselftest = 1;
+	wtvar_enableselftest = 0; // Weedo default 1
 	wtvar_counter = 15;
   wtvar_autoswith = 0;
     // wtvar_tune_x1 = 3;
