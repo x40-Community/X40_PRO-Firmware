@@ -170,7 +170,7 @@
    * below 2.
    */ 
   // Weedo Value WATCH_TEMP_PERIOD 20
-  #define WATCH_TEMP_PERIOD 26                // Seconds
+  #define WATCH_TEMP_PERIOD 28                // Seconds war 26
   #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 

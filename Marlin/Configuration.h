@@ -38,7 +38,7 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.5.5"
+#define SHORT_BUILD_VERSION "1.2.5.6"
 
 #define HARDWARE_VERSION "R73B"
 
@@ -50,8 +50,8 @@
  * 
  */
 
-//#define MACHINE_X40V1
-//#define MACHINE_X40V2
+//define MACHINE_X40V1
+//define MACHINE_X40V2
 //#define MACHINE_X40V1_BMG
 //#define MACHINE_X40V2_BMG
 
@@ -244,8 +244,8 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 310
-#define HEATER_1_MAXTEMP 310
+#define HEATER_0_MAXTEMP 275
+#define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
 #define HEATER_4_MAXTEMP 275
@@ -450,19 +450,19 @@
  * BMG Clone Extruder => X94.40 Y94.50 Z401.10 E332.00
  */
 #ifdef MACHINE_X40V1
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.34, 94.20, 404.24, 93.00}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 93.00}
 #endif
 
 #ifdef MACHINE_X40V2
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.34, 94.20, 404.24, 93.00}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 93.00}
 #endif
 
 #ifdef MACHINE_X40V1_BMG
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.40, 94.50, 401.10, 332.00}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 388.64}
 #endif
 
 #ifdef MACHINE_X40V2_BMG
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.40, 94.50, 401.10, 332.00}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 388.64}
 #endif
 
 
@@ -636,7 +636,7 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   30 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES 5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE    5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING            5 // Z position after probing is done
@@ -644,8 +644,8 @@
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -20
-#define Z_PROBE_OFFSET_RANGE_MAX 20
+#define Z_PROBE_OFFSET_RANGE_MIN -15
+#define Z_PROBE_OFFSET_RANGE_MAX  15
 
 // Enable the M48 repeatability test to test probe accuracy
 //#define Z_MIN_PROBE_REPEATABILITY_TEST
@@ -698,16 +698,16 @@
 // For direct drive extruder v9 set to true, for geared extruder set to false.
 #define INVERT_E0_DIR true
 #ifdef MACHINE_X40V1
-#define INVERT_E1_DIR true  //  bei Weedo Extruder true
+#define INVERT_E1_DIR true  //  with Weedo Extruder true
 #endif
 #ifdef MACHINE_X40V2
-#define INVERT_E1_DIR true  // bei Weedo Extruder true
+#define INVERT_E1_DIR true  // with Weedo Extruder true
 #endif
 #ifdef MACHINE_X40V1_BMG
-#define INVERT_E1_DIR false  // bei BMG Extruder false
+#define INVERT_E1_DIR false  // with BMG Extruder false
 #endif
 #ifdef MACHINE_X40V2_BMG
-#define INVERT_E1_DIR false  // bei BMG Extruder false
+#define INVERT_E1_DIR false  // with BMG Extruder false
 #endif
 #define INVERT_E2_DIR true
 #define INVERT_E3_DIR false

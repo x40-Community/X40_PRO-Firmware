@@ -502,6 +502,67 @@ void wt_save_config()
 	}
 
 	ZERO(buffer);
+	sprintf(buffer, "M92 X%.2f Y%.2f Z%.2f E%.2f",
+					 LINEAR_UNIT(planner.settings.axis_steps_per_mm[X_AXIS]),
+					 LINEAR_UNIT(planner.settings.axis_steps_per_mm[Y_AXIS]),
+					 LINEAR_UNIT(planner.settings.axis_steps_per_mm[Z_AXIS]),
+					 VOLUMETRIC_UNIT(planner.settings.axis_steps_per_mm[E_AXIS]));
+	if (!card.write_line(buffer))
+	{
+		SERIAL_ECHOLNPGM("Write to config save file fail.");
+		#ifdef DGUS_LCD
+		dgus.ShowLog(MMSG_CONFIG_WRITE_FAIL[wtvar_language]);
+		#endif
+		goto END;
+	}
+
+	ZERO(buffer);
+	sprintf(buffer, "M201 X%.0f Y%.0f Z%.0f E%.0f",
+					 LINEAR_UNIT(planner.settings.max_acceleration_mm_per_s2[X_AXIS]),
+					 LINEAR_UNIT(planner.settings.max_acceleration_mm_per_s2[Y_AXIS]),
+					 LINEAR_UNIT(planner.settings.max_acceleration_mm_per_s2[Z_AXIS]),
+					 VOLUMETRIC_UNIT(planner.settings.max_acceleration_mm_per_s2[E_AXIS]));
+	if (!card.write_line(buffer))
+	{
+		SERIAL_ECHOLNPGM("Write to config save file fail.");
+		#ifdef DGUS_LCD
+		dgus.ShowLog(MMSG_CONFIG_WRITE_FAIL[wtvar_language]);
+		#endif
+		goto END;
+	}
+
+	ZERO(buffer);
+	sprintf(buffer, "M203 X%.0f Y%.0f Z%.0f E%.0f",
+					 LINEAR_UNIT(planner.settings.max_feedrate_mm_s[X_AXIS]),
+					 LINEAR_UNIT(planner.settings.max_feedrate_mm_s[Y_AXIS]),
+					 LINEAR_UNIT(planner.settings.max_feedrate_mm_s[Z_AXIS]),
+					 VOLUMETRIC_UNIT(planner.settings.max_feedrate_mm_s[E_AXIS]));
+	if (!card.write_line(buffer))
+	{
+		SERIAL_ECHOLNPGM("Write to config save file fail.");
+		#ifdef DGUS_LCD
+		dgus.ShowLog(MMSG_CONFIG_WRITE_FAIL[wtvar_language]);
+		#endif
+		goto END;
+	}
+
+	ZERO(buffer);
+	sprintf(buffer, "M204 P%.0f R%.0f T%.0f",
+					 LINEAR_UNIT(planner.settings.acceleration),
+					 LINEAR_UNIT(planner.settings.retract_acceleration),
+					 LINEAR_UNIT(planner.settings.travel_acceleration));
+	if (!card.write_line(buffer))
+	{
+		SERIAL_ECHOLNPGM("Write to config save file fail.");
+		#ifdef DGUS_LCD
+		dgus.ShowLog(MMSG_CONFIG_WRITE_FAIL[wtvar_language]);
+		#endif
+		goto END;
+	}
+
+
+
+	ZERO(buffer);
 	sprintf(buffer, "M907 X%ld Y%ld Z%ld E%ld",
 					 stepper.motor_current_setting[0],
 					 stepper.motor_current_setting[1],
