@@ -38,7 +38,7 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.5.6"
+#define SHORT_BUILD_VERSION "1.2.5.7"
 
 #define HARDWARE_VERSION "R73B"
 
@@ -50,8 +50,8 @@
  * 
  */
 
-//define MACHINE_X40V1
-//define MACHINE_X40V2
+//#define MACHINE_X40V1
+//#define MACHINE_X40V2
 //#define MACHINE_X40V1_BMG
 //#define MACHINE_X40V2_BMG
 
@@ -128,11 +128,11 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-#define HOTEND_OFFSET_X {0.0, 353} // (in mm) for each extruder, offset of the hotend on the X axis
+#define HOTEND_OFFSET_X {0.0, 347} // war 353 (in mm) for each extruder, offset of the hotend on the X axis
 #define HOTEND_OFFSET_Y { 0.0, 0 }  // (mm) relative Y-offset for each nozzle
 //#define HOTEND_OFFSET_Z { 0.0, 0.00 }  // (mm) relative Z-offset for each nozzle
 
-#define T1_OFFSET_X     353
+#define T1_OFFSET_X     347 
 #define T1_OFFSET_Y     0
 
 // @section temperature
@@ -736,45 +736,28 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 310
-#define Y_BED_SIZE 310
+#define X_BED_SIZE 300  // war 310
+#define Y_BED_SIZE 300  // war 310
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#ifdef MACHINE_X40V1
-#define X_MIN_POS -47
-#define Y_MIN_POS -2
+#if defined  MACHINE_X40V1 || defined MACHINE_X40V1_BMG
+#define X_MIN_POS -53 // war -47
+#define Y_MIN_POS -7    // war -2
 #define Z_MIN_POS 0
-#define X_MAX_POS 355
-#define Y_MAX_POS 310
+#define X_MAX_POS 347 // war 355
+#define Y_MAX_POS 307  // war 310
 #define Z_MAX_POS 405
 #endif
 
-#ifdef MACHINE_X40V2
-#define X_MIN_POS -47 
-#define Y_MIN_POS -11
+#if defined MACHINE_X40V2 || defined MACHINE_X40V2_BMG
+#define X_MIN_POS -53 // war -47
+#define Y_MIN_POS -16 // war -11
 #define Z_MIN_POS 0
-#define X_MAX_POS 355
-#define Y_MAX_POS 303
+#define X_MAX_POS 347 // war 355
+#define Y_MAX_POS 300 // war 303
 #define Z_MAX_POS 405
 #endif
 
-#ifdef MACHINE_X40V1_BMG
-#define X_MIN_POS -47
-#define Y_MIN_POS -2
-#define Z_MIN_POS 0
-#define X_MAX_POS 355
-#define Y_MAX_POS 310
-#define Z_MAX_POS 405
-#endif
-
-#ifdef MACHINE_X40V2_BMG
-#define X_MIN_POS -47 
-#define Y_MIN_POS -11
-#define Z_MIN_POS 0
-#define X_MAX_POS 355
-#define Y_MAX_POS 303
-#define Z_MAX_POS 405
-#endif
 
 /**
  * Software Endstops
@@ -885,7 +868,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -924,7 +907,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column

@@ -135,7 +135,7 @@ const char MMSG_ERROR_TITLE[8][8] PROGMEM = {
 
 const char MMSG_NOTICE_TITLE[8][12] PROGMEM = {
 	"提示",			
-	"Notice",
+	"Information",
 	"通知",
 	"Notar",
     "Remarquer",
@@ -597,7 +597,7 @@ const char MMSG_SETTING_RUNOUT[8][22] PROGMEM = {
 
 const char MMSG_SETTING_SELFTEST[8][21] PROGMEM = {
 	"    开机自检",
-	"     Post",
+	"    Self-test",
 	"  セルフテスト",
 	"   Autoprueba",
     "     Publier",
@@ -619,7 +619,7 @@ const char MMSG_SETTING_POWERSAVE[8][26] PROGMEM = {
 
 const char MMSG_SETTING_RESTORE[8][20] PROGMEM = {
 	"    固件参数",
-	"    Parameters",
+	"   Parameters",
 	"    パラメータ",
 	"    Parámetro",
     "   Paramètres",
@@ -1243,7 +1243,7 @@ const char MMSG_LEVEL4_LINE1[8][270] PROGMEM = {
 
 const char MMSG_NOTICE_MOVING[8][52] PROGMEM = {
 	"\r\n\r\n 正在移动, 请稍等...",
-	"\r\n\r\n Moving, please wait...",
+	"\r\n\r\n Moveing, please wait...",
  	"\r\n\r\n 移動しています,お待ちください...",
 	"\r\n\r\n En movimiento, por favor espere...",
     "\r\n\r\n Déménagement, veuillez patienter...",
@@ -2669,9 +2669,9 @@ const char MMSG_WIFI_BOOT_ERROR[8][88] PROGMEM = {
 };
 
 const char MMSG_BUTTON_QR[8][13] PROGMEM = {
-	"  二维码",			// 
-	"  QR code",
-	"  QRコード",
+	" 二维码",			// 
+	" QR code",
+	" QRコード",
 	" Código QR",
     " QR Code",
     " QR-Code",

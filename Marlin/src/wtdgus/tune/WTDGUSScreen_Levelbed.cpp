@@ -108,16 +108,26 @@ void DGUS_Screen_Levelbed::Update()
 			dserial.SendString(ADDR_LDATAO_BUTTON1_TEXT, MMSG_END[wtvar_language], TEXTLEN_LDATAO_BUTTON);
 			dserial.SendLongString(ADDR_LDATAO_TEXT, MMSG_LEVEL_DATA_TEXT[wtvar_language], TEXTLEN_LDATAO_TEXT);
 
-			float f_base = z_values[1][1];
-			dserial.SendFloatString(ADDR_LDATAO_ITEM1_TEXT, z_values[0][2] - f_base);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM2_TEXT, z_values[1][2] - f_base);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM3_TEXT, z_values[2][2] - f_base);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM4_TEXT, z_values[0][1] - f_base);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM5_TEXT, 0);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM6_TEXT, z_values[2][1] - f_base);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM7_TEXT, z_values[0][0] - f_base);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM8_TEXT, z_values[1][0] - f_base);
-			dserial.SendFloatString(ADDR_LDATAO_ITEM9_TEXT, z_values[2][0] - f_base);
+		//	float f_base = z_values[2][2];
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM1_TEXT, z_values[0][4] - f_base); //
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM2_TEXT, z_values[2][4] - f_base); //
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM3_TEXT, z_values[4][4] - f_base); //
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM4_TEXT, z_values[0][2] - f_base); //
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM5_TEXT, z_values[2][2] - f_base); // Center
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM6_TEXT, z_values[4][2] - f_base); // 
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM7_TEXT, z_values[0][0] - f_base); //
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM8_TEXT, z_values[2][0] - f_base); //
+		//	dserial.SendFloatString(ADDR_LDATAO_ITEM9_TEXT, z_values[4][0] - f_base); //
+
+			dserial.SendFloatString(ADDR_LDATAO_ITEM1_TEXT, z_values[0][4]); //
+			dserial.SendFloatString(ADDR_LDATAO_ITEM2_TEXT, z_values[2][4]); //
+			dserial.SendFloatString(ADDR_LDATAO_ITEM3_TEXT, z_values[4][4]); //
+			dserial.SendFloatString(ADDR_LDATAO_ITEM4_TEXT, z_values[0][2]); //
+			dserial.SendFloatString(ADDR_LDATAO_ITEM5_TEXT, z_values[2][2]); // Center
+			dserial.SendFloatString(ADDR_LDATAO_ITEM6_TEXT, z_values[4][2]); // 
+			dserial.SendFloatString(ADDR_LDATAO_ITEM7_TEXT, z_values[0][0]); //
+			dserial.SendFloatString(ADDR_LDATAO_ITEM8_TEXT, z_values[2][0]); //
+			dserial.SendFloatString(ADDR_LDATAO_ITEM9_TEXT, z_values[4][0]); //
 
 			levelbedmanuelsts = LBSE_DETECT_END;
 		}
@@ -196,8 +206,8 @@ void DGUS_Screen_Levelbed::KeyProcess()
 					dgus.ShowMovingMessage();
 					queue.enqueue_now_P(PSTR("G28"));
 					queue.enqueue_now_P(PSTR("G29"));
-                    queue.enqueue_now_P(PSTR("G1 Z50 F1000"));
-				 	queue.enqueue_now_P(PSTR("G1 X-47 Y150 F5000"));
+                    queue.enqueue_now_P(PSTR("G1 Z20 F1000"));
+				 	queue.enqueue_now_P(PSTR("G1 X-53 Y150 F5000"));
 					queue.enqueue_now_P(PSTR("M18"));
 
 					levelbedmanuelsts = LBSE_WAITDETECT;
@@ -224,7 +234,7 @@ void DGUS_Screen_Levelbed::KeyProcess()
 				else
 				{
 					dgus.ShowMovingMessage();
-					queue.enqueue_now_P(PSTR("G1 Z50 F600"));
+					queue.enqueue_now_P(PSTR("G1 Z20 F600"));
 					queue.enqueue_now_P(PSTR("G28 X Y"));
 					levelbedmanuelsts = LBSE_WAITCANCELLED;
 				}

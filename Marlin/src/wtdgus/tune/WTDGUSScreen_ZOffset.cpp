@@ -34,8 +34,9 @@ void DGUS_Screen_ZOffset::Init()
 {
 	dgus.ShowMovingMessage();
 	queue.enqueue_one_now("G28");
-	queue.enqueue_one_now("G29");
-	queue.enqueue_one_now("G1 X150 Y150 F3000");
+//	queue.enqueue_one_now("G29");
+	queue.enqueue_one_now("M420 S1");
+	queue.enqueue_one_now("G1 X150 Y150 Z20 F3000");
 	queue.enqueue_one_now("G1 Z0 F200");
 
 	dserial.SendString(ADDR_ZOFFSET_TEXT_TITLE, MMSG_ZOFFSET_TITLE[wtvar_language], TEXTLEN_ZOFFSET_TITLE);
@@ -91,8 +92,8 @@ void DGUS_Screen_ZOffset::KeyProcess()
 			{
 				probe.offset.z = zoffset_current;
 				(void)settings.save();
-				queue.enqueue_one_now("G1 Z50 F2000");
-				queue.enqueue_one_now("G1 X-47 F2000");
+				queue.enqueue_one_now("G1 Z20 F2000");
+				queue.enqueue_one_now("G1 X-53 F5000");
 				Goback();
 
 			}

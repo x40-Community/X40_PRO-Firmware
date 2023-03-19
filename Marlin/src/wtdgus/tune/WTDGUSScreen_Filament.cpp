@@ -223,6 +223,7 @@ void DGUS_Screen_Filament::Update()
         if (wt_machineStatus != WS_PAUSE)   
 		    queue.enqueue_now_P("M104 S0");
         queue.enqueue_now_P("M18");
+		queue.enqueue_now_P("T0 S"); //Holger
 		Goback();
 		break;
 
@@ -321,12 +322,14 @@ void DGUS_Screen_Filament::KeyProcess()
                         queue.enqueue_now_P("M104 S0");
                         queue.enqueue_now_P("M410");
 						queue.enqueue_now_P("M18");
+						queue.enqueue_now_P("T0 S"); //Holger
                         Goback();
                     }
                 }
                 else
                 {
-					queue.enqueue_now_P("M18");   
+					queue.enqueue_now_P("M18");
+					queue.enqueue_now_P("T0 S"); //Holger   
                     Goback();
                 }
 			}
@@ -343,6 +346,7 @@ void DGUS_Screen_Filament::KeyProcess()
 					queue.enqueue_now_P("M410");
                 }
                 queue.enqueue_now_P("M18");
+				queue.enqueue_now_P("T0 S"); //Holger  
                 Goback();				
 			}
 			else if (gltouchpara.value == KEY_2OPTION_BUTTON_ITEM1)
