@@ -1,5 +1,5 @@
 # WEEDO X40 PRO Community Firmware
-![image](http://www.weedo.ltd/wp-content/uploads/2021/04/970x300-ABanner1.jpg)
+![image](http://www.x40-community.org/images/x40/Weedo_X40_PRO.png)
 
 ## Summary
 This is the repository that contains the community version firmware for the WEEDO X40 3D Printer. 
