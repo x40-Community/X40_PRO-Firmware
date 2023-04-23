@@ -1,6 +1,9 @@
 # WEEDO X40 PRO Community Firmware
 ![image](http://www.x40-community.org/images/x40/Weedo_X40_PRO.png)
 
+## Information
+The use of the community firmware is at your own risk. There is no liability whatsoever for any damage! 
+
 ## Summary
 This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the community firmware provided by Weedo. Besides bug fixes there are also the following features:
 - 25 Points bed leveling
@@ -17,11 +20,14 @@ This is the repository that contains the community version firmware for the WEED
 - Bug fix that eliminate crashs
 - Enable G3 arc command
 - Add M0 pause command
+- Add M922 Turn automatic filament extrusion on/off command
+- Add M923 Turn multiple nozzle wipes on/off command
+- Add M924 Change-over to Extruder LH/RH command
 - BMG firmware variant enables use of mirrored extruders (option)
 - High Temperarure variant (option)
 
 
-## Hardware Version 
+## Usable Hardware Version 
 - X40 V1: The first mass production version. The production time is from November 2020 to June 2021.
 - X40 V2: The second production version. The production batch start from July 2021.
 The length in the Y-axis direction has been shortened. The Y-axis coordinate has been changed from (-2,310) to (-11,303).
