@@ -2,7 +2,7 @@
 ![image](http://www.x40-community.org/images/x40/Weedo_X40_PRO.png)
 
 ## Information
-The use of the community firmware is at your own risk. There is no liability whatsoever for any damage! 
+**The use of the community firmware is at your own risk. There is no liability whatsoever for any damage!** 
 
 [Support only for X40-Community member!](http://www.x40-community.org/index.php/members-area)
 
