@@ -5,6 +5,7 @@
 The use of the community firmware is at your own risk. There is no liability whatsoever for any damage! 
 
 The X40 PRO firmware has been optimized to work with Ultimaker Cura. If you use a different slicer, the printer may not work properly! Please use Ultimaker Cura with X40 PRO Cura configuration to avoid any issues.
+https://github.com/x40-Community/Cura_for_Weedo_X40_PRO
 
 ## Summary
 This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the community firmware provided by Weedo. Besides bug fixes there are also the following features:
