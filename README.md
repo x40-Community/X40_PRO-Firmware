@@ -40,7 +40,7 @@ More information see http://www.x40-community.org/index.php/firmware/x40-pro-fir
 The length in the Y-axis direction has been shortened. The Y-axis coordinate has been changed from (-2,310) to (-11,303).
 
 ## Hardware upgrade
-- [X40 PRO part coolingsystem for better performance](https://github.com/x40-Community/X40_PRO-Community_Coolingsystem)
+- [X40 PRO part coolingsystem for better performance and printing quality](https://github.com/x40-Community/X40_PRO-Community_Coolingsystem)
 - [High temperture (HT) upgrade for printing up to 280°C](http://www.x40-community.org/index.php/firmware/x40-pro-high-temperature) (X40 PRO part cooling system is required)
 - [All metal BMG Extruder upgrade](http://www.x40-community.org/index.php/firmware/weedo-x40-extruder-upgrade)
 
