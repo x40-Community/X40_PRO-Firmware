@@ -2,12 +2,24 @@
 ![image](http://www.x40-community.org/images/x40/Weedo_X40_PRO.png)
 
 ## Summary
-This is the repository that contains the community version firmware for the WEEDO X40 3D Printer. 
+This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the community firmware provided by Weedo. Besides bug fixes there are also the following features:
+- 25 Points bed leveling
+- XY-Offset SuperFine tuning with a settings accuray of 0.01
+- Z-Offset Fine tinung with a settings accuray of 0.02
+- Printer no longer stops over the print object when changing tools Switchable wiping function (remove material from pre-extrusion)
+- Switchable pre-extrusion function
+- Optimized manual bed leveling and Z-offset with 0.04mm steps
+- Babysteps with 0.02mm steps
+- Extended material selection with temperature indication
+- Reduced filament feed speed
+- Extended parameter display and backup firmware setup function
+- Optimized firmware parameters against heating failed error
+- Bug fix that eliminate crashs
+- Enable G3 arc command
+- Add M0 pause command
+- BMG firmware variant enables use of mirrored extruders (option)
+- High Temperarure variant (option)
 
-The framework of the firmware is based on the Marlin 2.0.x version. 
-We fixed some bugs in the dual x carriage modules.
-
-The user interaction and network communication modules are developed by WEEDO3D.
 
 ## Hardware Version 
 - X40 V1: The first mass production version. The production time is from November 2020 to June 2021.
