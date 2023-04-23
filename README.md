@@ -56,13 +56,13 @@ X40 will restart to enter the firmware update mode. Wait for about 1 minute, the
 
 
 
-## The difference between the community version firmware and the official version firmware
+## The difference between the X40 PRO community version firmware and the Weedo Stock firmware
 
-The official firmware has the function of upgrading the firmware via TF card. Use the IAP function in the control menu to read the flash.wfm file on the TF card to upgrade the firmware.
+The stock firmware has the function of upgrading the firmware via TF card. Use the IAP function in the control menu to read the flash.wfm file on the TF card to upgrade the firmware.
 
-The community version firmware does not support the wfm format, so it does not support firmware upgrade via TF card.
+The X40 PRO community version firmware does not support the wfm format, so it does not support firmware upgrade via TF card. Please use the flashing software for an up or down grade.
 
 
 ## Return to the official vesrion firmware
 
-Use WEEDOIAP.exe to flash X40_Vxxx_Community_to_Official.bin in the /Release directory.
+Use WEEDOIAP.exe to flash X40_Vxxx_Community_to_Official.bin in the /Release directory from the Weedo source code.
