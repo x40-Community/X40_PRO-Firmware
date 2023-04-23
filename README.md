@@ -22,9 +22,7 @@ This is the repository that contains the community version firmware for the WEED
 - Add M0 pause command
 - Add M922 Turn automatic filament extrusion on/off command
 - Add M923 Turn multiple nozzle wipes on/off command
-- Add M924 Change-over to Extruder LH/RH command
 - BMG firmware variant enables use of mirrored extruders (option)
-- High Temperarure variant (option)
 
 
 ## Usable Hardware Version 
