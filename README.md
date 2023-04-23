@@ -28,6 +28,7 @@ This is the repository that contains the community version firmware for the WEED
 - Add M923 Turn multiple nozzle wipes on/off command
 - BMG firmware variant enables use of mirrored extruders (option)
 
+More information see http://www.x40-community.org/index.php/firmware/x40-pro-firmware
 
 ## Usable Hardware Version 
 - X40 V1: The first mass production version. The production time is from November 2020 to June 2021.
