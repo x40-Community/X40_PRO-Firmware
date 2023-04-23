@@ -4,7 +4,7 @@
 ## Information
 The use of the community firmware is at your own risk. There is no liability whatsoever for any damage! 
 
-Support only for X40-Community member!
+[Support only for X40-Community member!](http://www.x40-community.org/index.php/members-area)
 
 The X40 PRO firmware has been optimized to work with Ultimaker Cura. If you use a different slicer, the printer may not work properly! Please use Ultimaker Cura with X40 PRO Cura configuration to avoid any issues.
 
