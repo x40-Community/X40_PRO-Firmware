@@ -47,6 +47,19 @@ The length in the Y-axis direction has been shortened. The Y-axis coordinate has
 - [High temperture (HT) upgrade for printing up to 280°C](http://www.x40-community.org/index.php/firmware/x40-pro-high-temperature) (X40 PRO part cooling system is required)
 - [All metal BMG Extruder upgrade](http://www.x40-community.org/index.php/firmware/weedo-x40-extruder-upgrade)
 
+## Firmware Variants
+The source code contains all eight firmware variants which are:
+- X40V1 PRO
+- X40V1 PRO HT
+- X40V1 PRO BMG
+- X40V1 PRO BMG HT
+- X40V2 PRO
+- X40V2 PRO HT
+- X40V2 PRO BMG
+- X40V2 PRO BMG HT
+
+Change the configuration so that the correct firmware comes out, otherwise you will get problems.
+
 ## Compile requirements
 
 - Download and install [VSCode](https://code.visualstudio.com/)
