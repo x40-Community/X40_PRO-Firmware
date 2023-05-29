@@ -38,7 +38,7 @@ This is the repository that contains the community version firmware for the WEED
 - [Add M0 pause command](https://www.youtube.com/watch?v=T580yVQAL4M&t=584s) (9:45 Insert pause at layer)
 - Add M922 Turn automatic filament extrusion on/off command
 - [Add M923 Turn multiple nozzle wipes on/off command](https://www.youtube.com/watch?v=IR-A73ipVLk)
-- BMG firmware variant enables use of mirrored extruders (option)
+- [BMG firmware variant enables use of mirrored extruders (option)](http://www.x40-community.org/index.php/firmware/weedo-x40-extruder-upgrade)
 
 Please note that with the latest firmware variants, the X-Offset is 5mm smaller (5mm shift to the right) than with the Weedo Stock firmware. This prevents the right extruder from colliding at X=0. If you didn't notice that, there is a 5mm offset between the right and left extruder in dual mode! The correction is made via the parameters of the firmware and not via the slicer.
 
