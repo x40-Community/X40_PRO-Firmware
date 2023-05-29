@@ -23,8 +23,8 @@ X40 PRO Videos see https://www.youtube.com/@x40-community
 ## Summary
 This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the community firmware provided by Weedo. Besides bug fixes there are also the following features:
 - 25 Points bed leveling
-- XY-Offset SuperFine tuning with a settings accuray of 0.01
-- Z-Offset Fine tinung with a settings accuray of 0.02
+- XY-Offset SuperFine tuning with a settings accuray of 0.01mm
+- Z-Offset Fine tinung with a settings accuray of 0.02mm
 - Printer no longer stops over the print object when changing tools Switchable wiping function (remove material from pre-extrusion)
 - Switchable pre-extrusion function
 - Optimized manual bed leveling and Z-offset with 0.04mm steps
