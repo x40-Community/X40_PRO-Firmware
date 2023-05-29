@@ -4,7 +4,7 @@
 ## Information
 **The use of the community firmware is at your own risk. There is no liability whatsoever for any damage!** 
 
-[Support only for X40-Community member!](http://www.x40-community.org/index.php/members-area) Please note that proper [printer setup and calibration ](http://www.x40-community.org/index.php/the-3d-printer/weedo-x40-commissioning) is required. Just installing the firmware is not enough!
+Please note that proper [printer setup and calibration ](http://www.x40-community.org/index.php/the-3d-printer/weedo-x40-commissioning) is required. Just installing the firmware is not enough!
 
 The X40 PRO firmware has been optimized to work with Ultimaker Cura. If you use a different slicer, the printer may not work properly! [Please use Ultimaker Cura with X40 PRO Cura configuration to avoid any issues.](https://github.com/x40-Community/Cura_for_Weedo_X40_PRO)
 
