@@ -12,7 +12,7 @@ The Cura printing profiles are matched to the [X40 PRO Part Community cooling sy
 
 Please note that the High Temperature variant only works with the [High Temperature upgrade.](http://www.x40-community.org/index.php/firmware/x40-pro-high-temperature) Without the upgrade you will destroy the printer with highly toxic fumes!
 
-X40PRO Video see https://www.youtube.com/@x40-community
+X40PRO Videos see https://www.youtube.com/@x40-community
 
 ## Help
 **Neither the X40 community nor Weedo provide help with the source code. If you want to use the source code, you should already know what you're doing!**
