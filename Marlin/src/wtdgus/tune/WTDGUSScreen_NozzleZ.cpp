@@ -93,7 +93,8 @@ void DGUS_Screen_Nozzle_Z::KeyProcess()
                     status = NSE_STEP2_MOVING;
 					dgus.ShowMovingMessage();
                     queue.enqueue_one_now("G28");
-                    queue.enqueue_one_now("G29");
+               //   queue.enqueue_one_now("G29");
+					queue.enqueue_one_now("M420 S1"); //X40 PRO
                     queue.enqueue_one_now("G1 X125 Y150 F3000");
                     queue.enqueue_one_now("M605 S0");
                     queue.enqueue_one_now("T1");

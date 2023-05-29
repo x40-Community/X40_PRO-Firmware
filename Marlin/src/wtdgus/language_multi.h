@@ -925,6 +925,62 @@ const char MMSG_ERROR_MAXTEMP[8][68] PROGMEM = {
     "Printkop fout: temperatuur hoger dan toegestaan"
 };
 
+#if defined MACHINE_X40V1_HT || defined MACHINE_X40V2_HT || defined MACHINE_X40V1_BMG_HT || defined MACHINE_X40V2_BMG_HT  //High temperature
+
+const char MMSG_FILAMENT_TYPE_NAME1[15] PROGMEM = {
+	"220℃ PLA"
+};
+
+const char MMSG_FILAMENT_TYPE_NAME2[10] PROGMEM = {
+	"230℃ TPU"
+};
+
+const char MMSG_FILAMENT_TYPE_NAME4[11] PROGMEM = {
+	"240℃ PETG"
+};
+
+const char MMSG_FILAMENT_TYPE_NAME3[11] PROGMEM = {
+	"250℃ ASA"
+};
+
+const char MMSG_FILAMENT_TYPE_NAME5[11] PROGMEM = {
+	"260℃ PCTG"
+};
+
+const char MMSG_FILAMENT_TYPE_NAME6[11] PROGMEM = {
+	"280℃ CPE"
+};
+
+
+
+const char MMSG_FILAMENT_TYPE_TEMP1[8] PROGMEM = {
+	"220℃"
+};
+
+const char MMSG_FILAMENT_TYPE_TEMP2[8] PROGMEM = {
+	"230℃"
+};
+
+const char MMSG_FILAMENT_TYPE_TEMP3[8] PROGMEM = {
+	"240℃"
+};
+
+const char MMSG_FILAMENT_TYPE_TEMP4[6] PROGMEM = {
+	"250℃"
+};
+
+const char MMSG_FILAMENT_TYPE_TEMP5[6] PROGMEM = {
+	"260℃"
+};
+
+const char MMSG_FILAMENT_TYPE_TEMP6[6] PROGMEM = {
+	"280℃"
+
+};
+
+#else // Normal temperature
+
+
 const char MMSG_FILAMENT_TYPE_NAME1[15] PROGMEM = {
 	"200℃ NonOilen"
 };
@@ -975,6 +1031,8 @@ const char MMSG_FILAMENT_TYPE_TEMP6[6] PROGMEM = {
 	"260℃"
 
 };
+#endif
+
 const char MMSG_FILAMENT_TYPE_TITLE[8][30] PROGMEM = {
 	"选择料丝类型 ",
 	"Filament Type ",

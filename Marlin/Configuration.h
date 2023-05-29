@@ -38,7 +38,7 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.5.7"
+#define SHORT_BUILD_VERSION "1.2.5.8"
 
 #define HARDWARE_VERSION "R73B"
 
@@ -51,24 +51,45 @@
  */
 
 //#define MACHINE_X40V1
+//#define MACHINE_X40V1_HT
 //#define MACHINE_X40V2
+//#define MACHINE_X40V2_HT
 //#define MACHINE_X40V1_BMG
+//#define MACHINE_X40V1_BMG_HT
 //#define MACHINE_X40V2_BMG
+//#define MACHINE_X40V2_BMG_HT
 
 #ifdef MACHINE_X40V1
 #define MACHINE_NAME "X40V1 PRO"
+#endif
+
+
+#ifdef MACHINE_X40V1_HT
+#define MACHINE_NAME "X40V1 PRO HT"
 #endif
 
 #ifdef MACHINE_X40V2
 #define MACHINE_NAME "X40V2 PRO"
 #endif
 
+#ifdef MACHINE_X40V2_HT
+#define MACHINE_NAME "X40V2 PRO HT"
+#endif
+
 #ifdef MACHINE_X40V1_BMG
 #define MACHINE_NAME "X40V1 PRO BMG"
 #endif
 
+#ifdef MACHINE_X40V1_BMG_HT
+#define MACHINE_NAME "X40V1 PRO BMG HT"
+#endif
+
 #ifdef MACHINE_X40V2_BMG
 #define MACHINE_NAME "X40V2 PRO BMG"
+#endif
+
+#ifdef MACHINE_X40V2_BMG_HT
+#define MACHINE_NAME "X40V2 PRO BMG HT"
 #endif
 
 /**
@@ -132,7 +153,7 @@
 #define HOTEND_OFFSET_Y { 0.0, 0 }  // (mm) relative Y-offset for each nozzle
 //#define HOTEND_OFFSET_Z { 0.0, 0.00 }  // (mm) relative Z-offset for each nozzle
 
-#define T1_OFFSET_X     347 
+#define T1_OFFSET_X     347 // war 353
 #define T1_OFFSET_Y     0
 
 // @section temperature
@@ -244,15 +265,30 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
-#define HEATER_2_MAXTEMP 275
-#define HEATER_3_MAXTEMP 275
-#define HEATER_4_MAXTEMP 275
-#define HEATER_5_MAXTEMP 275
-#define HEATER_6_MAXTEMP 275
-#define HEATER_7_MAXTEMP 275
+
+
+#if defined MACHINE_X40V1_HT || defined MACHINE_X40V2_HT || defined MACHINE_X40V1_BMG_HT || defined MACHINE_X40V2_BMG_HT
+#define HEATER_0_MAXTEMP 310
+#define HEATER_1_MAXTEMP 310
+#define HEATER_2_MAXTEMP 310
+#define HEATER_3_MAXTEMP 310
+#define HEATER_4_MAXTEMP 310
+#define HEATER_5_MAXTEMP 310
+#define HEATER_6_MAXTEMP 310
+#define HEATER_7_MAXTEMP 310
 #define BED_MAXTEMP      150
+#else
+#define HEATER_0_MAXTEMP 270
+#define HEATER_1_MAXTEMP 270
+#define HEATER_2_MAXTEMP 270
+#define HEATER_3_MAXTEMP 270
+#define HEATER_4_MAXTEMP 270
+#define HEATER_5_MAXTEMP 270
+#define HEATER_6_MAXTEMP 270
+#define HEATER_7_MAXTEMP 270
+#define BED_MAXTEMP      150
+#endif
+
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -276,9 +312,15 @@
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
   // X40
+  #if defined MACHINE_X40V1_HT || defined MACHINE_X40V2_HT || defined MACHINE_X40V1_BMG_HT || defined MACHINE_X40V2_BMG_HT
+  #define DEFAULT_Kp 11.83
+  #define DEFAULT_Ki 0.94
+  #define DEFAULT_Kd 37.22
+  #else
   #define DEFAULT_Kp 12.54
   #define DEFAULT_Ki 0.89
   #define DEFAULT_Kd 43.99
+  #endif
 
 #endif // PIDTEMP
 
@@ -449,19 +491,19 @@
  * Weedo X40 Extruder => X94.34 Y94.20 Z404.24 E93.00
  * BMG Clone Extruder => X94.40 Y94.50 Z401.10 E332.00
  */
-#ifdef MACHINE_X40V1
+#if defined MACHINE_X40V1 || defined MACHINE_X40V1_HT
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 93.00}
 #endif
 
-#ifdef MACHINE_X40V2
+#if defined MACHINE_X40V2 || defined MACHINE_X40V2_HT
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 93.00}
 #endif
 
-#ifdef MACHINE_X40V1_BMG
+#if defined MACHINE_X40V1_BMG || defined MACHINE_X40V1_BMG_HT
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 388.64}
 #endif
 
-#ifdef MACHINE_X40V2_BMG
+#if defined MACHINE_X40V2_BMG || defined MACHINE_X40V2_BMG_HT
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.55, 94.55, 401.10, 388.64}
 #endif
 
@@ -697,16 +739,16 @@
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
 #define INVERT_E0_DIR true
-#ifdef MACHINE_X40V1
+#if defined MACHINE_X40V1 || defined MACHINE_X40V1_HT
 #define INVERT_E1_DIR true  //  with Weedo Extruder true
 #endif
-#ifdef MACHINE_X40V2
+#if defined MACHINE_X40V2 || defined MACHINE_X40V2_HT
 #define INVERT_E1_DIR true  // with Weedo Extruder true
 #endif
-#ifdef MACHINE_X40V1_BMG
+#if defined MACHINE_X40V1_BMG || defined MACHINE_X40V1_BMG_HT
 #define INVERT_E1_DIR false  // with BMG Extruder false
 #endif
-#ifdef MACHINE_X40V2_BMG
+#if defined MACHINE_X40V2_BMG || defined MACHINE_X40V2_BMG_HT
 #define INVERT_E1_DIR false  // with BMG Extruder false
 #endif
 #define INVERT_E2_DIR true
@@ -740,7 +782,7 @@
 #define Y_BED_SIZE 300  // war 310
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#if defined  MACHINE_X40V1 || defined MACHINE_X40V1_BMG
+#if defined MACHINE_X40V1 || defined MACHINE_X40V1_HT || defined MACHINE_X40V1_BMG ||  defined MACHINE_X40V1_BMG_HT
 #define X_MIN_POS -53 // war -47
 #define Y_MIN_POS -7    // war -2
 #define Z_MIN_POS 0
@@ -749,15 +791,14 @@
 #define Z_MAX_POS 405
 #endif
 
-#if defined MACHINE_X40V2 || defined MACHINE_X40V2_BMG
-#define X_MIN_POS -53 // war -47
+#if defined MACHINE_X40V2 || defined MACHINE_X40V2_HT || defined MACHINE_X40V2_BMG || defined MACHINE_X40V2_BMG_HT
+#define X_MIN_POS -53 // war  -47
 #define Y_MIN_POS -16 // war -11
 #define Z_MIN_POS 0
 #define X_MAX_POS 347 // war 355
 #define Y_MAX_POS 300 // war 303
 #define Z_MAX_POS 405
 #endif
-
 
 /**
  * Software Endstops

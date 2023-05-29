@@ -35,7 +35,7 @@ void DGUS_Screen_ZOffset::Init()
 	dgus.ShowMovingMessage();
 	queue.enqueue_one_now("G28");
 //	queue.enqueue_one_now("G29");
-	queue.enqueue_one_now("M420 S1");
+	queue.enqueue_one_now("M420 S1");  //X40 PRO
 	queue.enqueue_one_now("G1 X150 Y150 Z20 F3000");
 	queue.enqueue_one_now("G1 Z0 F200");
 

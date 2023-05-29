@@ -24,8 +24,10 @@
 
 #if HAS_FILAMENT_SENSOR
 
+#include "../../wtdgus/WTDGUSSerial.h"
 #include "../../gcode.h"
 #include "../../../feature/runout.h"
+
 
 /**
  * M412: Enable / Disable filament runout detection
@@ -44,7 +46,23 @@ void GcodeSuite::M412() {
     #endif
     const bool seenR = parser.seen('R'), seenS = parser.seen('S');
     if (seenR || seenS) runout.reset();
-    if (seenS) runout.enabled = parser.value_bool();
+    if (seenS) 
+    {
+        runout.enabled = parser.value_bool();
+        if (runout.enabled)
+        {
+           wtvar_enablefilamentruncout = 1;
+           dserial.SendInt16(ADDR_SETTING_ICON_ITEM2, ENUM_OPTION_ON); 
+        }
+        else
+        {
+            wtvar_autoswith = 0;
+						wtvar_enablefilamentruncout = 0;
+            dserial.SendInt16(ADDR_SETTING_ICON_ITEM2, ENUM_OPTION_OFF);
+						dserial.SendInt16(ADDR_SETTING_ICON_ITEM3, ENUM_OPTION_OFF);
+        }
+
+    }
     #ifdef FILAMENT_RUNOUT_DISTANCE_MM
       if (parser.seen('D')) runout.set_runout_distance(parser.value_linear_units());
     #endif
