@@ -29,7 +29,7 @@ This is the repository that contains the community version firmware for the WEED
 - Switchable pre-extrusion function
 - Optimized manual bed leveling and Z-offset with 0.04mm steps
 - Babysteps with 0.02mm steps
-- Extended material selection with temperature indication
+- Extended material selection with temperature indication (Default and HT variant are different)
 - Reduced filament feed speed
 - Extended parameter display and backup firmware setup function
 - Optimized firmware parameters against heating failed error
