@@ -22,22 +22,22 @@ X40 PRO Videos see https://www.youtube.com/@x40-community
 
 ## Summary
 This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the community firmware provided by Weedo. Besides bug fixes there are also the following features:
-- 25 Points bed leveling
-- XY-Offset SuperFine tuning with a settings accuray of 0.01mm
-- Z-Offset Fine tinung with a settings accuray of 0.02mm
+- [25 Points bed leveling](https://www.youtube.com/watch?v=VdxImaRn2HA)
+- [XY-Offset SuperFine tuning with a settings accuray of 0.01mm](https://www.youtube.com/watch?v=hFpMcKlDiqc)
+- [Z-Offset Fine tinung with a settings accuray of 0.02mm](https://www.youtube.com/watch?v=PPG9tR3tM6Q)
 - Printer no longer stops over the print object when changing tools Switchable wiping function (remove material from pre-extrusion)
 - Switchable pre-extrusion function
 - Optimized manual bed leveling and Z-offset with 0.04mm steps
 - Babysteps with 0.02mm steps
-- Extended material selection with temperature indication (Default and HT variant are different)
+- [Extended material selection with temperature indication](https://www.youtube.com/watch?v=TUhd4CYle5w) (Default and HT variant are different)
 - Reduced filament feed speed
-- Extended parameter display and backup firmware setup function
+- [Extended parameter display and backup firmware setup function](https://www.youtube.com/watch?v=IR-A73ipVLk)
 - Optimized firmware parameters against heating failed error
 - Bug fix that eliminate crashs
 - Enable G3 arc command
 - Add M0 pause command
 - Add M922 Turn automatic filament extrusion on/off command
-- Add M923 Turn multiple nozzle wipes on/off command
+- [Add M923 Turn multiple nozzle wipes on/off command](https://www.youtube.com/watch?v=IR-A73ipVLk)
 - BMG firmware variant enables use of mirrored extruders (option)
 
 Please note that with the latest firmware variants, the X-Offset is 5mm smaller (5mm shift to the right) than with the Weedo Stock firmware. This prevents the right extruder from colliding at X=0. If you didn't notice that, there is a 5mm offset between the right and left extruder in dual mode! The correction is made via the parameters of the firmware and not via the slicer.
