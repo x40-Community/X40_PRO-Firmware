@@ -40,7 +40,7 @@ This is the repository that contains the community version firmware for the WEED
 - Add M923 Turn multiple nozzle wipes on/off command
 - BMG firmware variant enables use of mirrored extruders (option)
 
-Please note that with the latest firmware variants, the X-Offset is 5mm smaller (5mm shift to the right) than with the Weedo Stock firmware. This prevents the right extruder from colliding at X=0. If you didn't notice that, there is a 5mm offset between the right and left extruder in dual mode!
+Please note that with the latest firmware variants, the X-Offset is 5mm smaller (5mm shift to the right) than with the Weedo Stock firmware. This prevents the right extruder from colliding at X=0. If you didn't notice that, there is a 5mm offset between the right and left extruder in dual mode! The correction is made via the parameters of the firmware and not via the slicer.
 
 More information see http://www.x40-community.org/index.php/firmware/x40-pro-firmware
 
