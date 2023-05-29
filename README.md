@@ -62,6 +62,7 @@ The source code contains all eight firmware variants which are:
 - X40V2 PRO BMG HT
 
 Change the configuration so that the correct firmware comes out, otherwise you will get problems.
+Ready to Use binary files can be found in the Release directory.
 
 ## Compile requirements
 
