@@ -87,6 +87,7 @@ Lanuch the WEEDOIAP.exe, open the firmware.bin file from build directory, choice
 ![image](http://www.weedo.ltd/wp-content/uploads/2021/04/weedoiap.png)
 
 X40 will restart to enter the firmware update mode. Wait for about 1 minute, the printer will automatically restart after the firmware update is completed.
+Just installing the X40 PRO firmware is not enough for the correct functioning of the firmware. After the installation you have to calibrate the printer and run the setup again!
 
 ![image](http://www.weedo.ltd/wp-content/uploads/2021/04/iap.jpg)
 
