@@ -13,10 +13,10 @@ The Cura printing profiles are matched to the [X40 PRO Part Community cooling sy
 Please note that the High Temperature variant only works with the [High Temperature upgrade.](http://www.x40-community.org/index.php/firmware/x40-pro-high-temperature) Without the upgrade you will destroy the printer with highly toxic fumes!
 
 ## Help
-**Neither the X40 community nor Weedo provide help with the source code. If you want to use the source code, you should already know what you're doing!**
+Neither the X40 community nor Weedo provide help with the source code. If you want to use the source code, you should already know what you're doing!
 
 ## Source code
-**If you want to publish a modified source code based on the X40 PRO data, please use a different name for the project so that nobody gets confused.**
+If you want to publish a modified source code based on the X40 PRO data, please use a different name for the project so that nobody gets confused.
 
 ## Summary
 This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the community firmware provided by Weedo. Besides bug fixes there are also the following features:
