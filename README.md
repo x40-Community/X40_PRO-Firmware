@@ -35,7 +35,7 @@ This is the repository that contains the community version firmware for the WEED
 - Optimized firmware parameters against heating failed error
 - Bug fix that eliminate crashs
 - [Enable G3 arc command](https://www.youtube.com/watch?v=envSduZ9SGM)
-- Add M0 pause command
+- [Add M0 pause command](https://www.youtube.com/watch?v=T580yVQAL4M&t=584s) (9:45 Insert pause at layer)
 - Add M922 Turn automatic filament extrusion on/off command
 - [Add M923 Turn multiple nozzle wipes on/off command](https://www.youtube.com/watch?v=IR-A73ipVLk)
 - BMG firmware variant enables use of mirrored extruders (option)
