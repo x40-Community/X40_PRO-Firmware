@@ -31,7 +31,7 @@ This is the repository that contains the community version firmware for the WEED
 - Babysteps with 0.02mm steps
 - [Extended material selection with temperature indication](https://www.youtube.com/watch?v=TUhd4CYle5w) (Default and HT variant are different)
 - Reduced filament feed speed
-- [Extended parameter display and backup firmware setup function](https://www.youtube.com/watch?v=IR-A73ipVLk)
+- [Extended parameter display and backup firmware setup function](https://www.youtube.com/watch?v=Ws7HPvAgj3k)
 - Optimized firmware parameters against heating failed error
 - Bug fix that eliminate crashs
 - [Enable G3 arc command](https://www.youtube.com/watch?v=envSduZ9SGM)
