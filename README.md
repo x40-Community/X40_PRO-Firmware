@@ -27,14 +27,14 @@ This is the repository that contains the community version firmware for the WEED
 - [Z-Offset Fine tinung with a settings accuray of 0.02mm](https://www.youtube.com/watch?v=PPG9tR3tM6Q)
 - Printer no longer stops over the print object when changing tools Switchable wiping function (remove material from pre-extrusion)
 - Switchable pre-extrusion function
-- Optimized manual bed leveling and Z-offset with 0.04mm steps
+- [Optimized manual bed leveling and Z-offset with 0.04mm steps](https://www.youtube.com/watch?v=r8c9Bha43AU&t=43s)
 - Babysteps with 0.02mm steps
 - [Extended material selection with temperature indication](https://www.youtube.com/watch?v=TUhd4CYle5w) (Default and HT variant are different)
 - Reduced filament feed speed
 - [Extended parameter display and backup firmware setup function](https://www.youtube.com/watch?v=IR-A73ipVLk)
 - Optimized firmware parameters against heating failed error
 - Bug fix that eliminate crashs
-- Enable G3 arc command
+- [Enable G3 arc command](https://www.youtube.com/watch?v=envSduZ9SGM)
 - Add M0 pause command
 - Add M922 Turn automatic filament extrusion on/off command
 - [Add M923 Turn multiple nozzle wipes on/off command](https://www.youtube.com/watch?v=IR-A73ipVLk)
