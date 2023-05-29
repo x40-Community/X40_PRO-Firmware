@@ -86,14 +86,21 @@ void DGUS_Screen_ZOffset::KeyProcess()
 		{
 			if (gltouchpara.value == KEY_ZOFFSET_RETURN)
 			{
+				queue.enqueue_one_now("G90");  //X40 PRO
+			    queue.enqueue_one_now("G1 Z20 F2000");  //X40 PRO
+				queue.enqueue_one_now("G28 R0 X"); //X40 PRO
+				queue.enqueue_one_now("M18"); //X40 PRO
 				Goback();
+				
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_SAVE)
 			{
 				probe.offset.z = zoffset_current;
 				(void)settings.save();
+				queue.enqueue_one_now("G90");  //X40 PRO
 				queue.enqueue_one_now("G1 Z20 F2000");
-				queue.enqueue_one_now("G1 X-53 F5000");
+				queue.enqueue_one_now("G28 R0 X");
+				queue.enqueue_one_now("M18"); //X40 PRO
 				Goback();
 
 			}

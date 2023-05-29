@@ -102,7 +102,8 @@ void DGUS_Screen_RestoreSetting::ShowReport(void)
 	char* buffer = (char*)malloc(TEXTLEN_2BINFO_ITEM);
 
 	memset(buffer, 0, TEXTLEN_2BINFO_ITEM);
-	sprintf(buffer, "Home offset: M218 T1 X%.2f Y%.2f Z%.2f\r\nZ-Probe Offset: M851 X%.2f Y%.2f Z%.2f\r\nE-Steps: M92 X%.2f Y%.2f Z%.2f E%.2f\r\nAcceleration: M201 X%.0f Y%.0f Z%.0f E%.0f\r\nMax Feedrate: M203 X%.0f Y%.0f Z%.0f E%.0f\r\nAcceleration: M204 P%.0f R%.0f T%.0f\r\nLinear Advance: M900 K-factor %.2f",
+	sprintf(buffer, "Home Offset: M218 T1 X%.2f Y%.2f Z%.2f\r\nZ-Probe Offset: M851 X%.2f Y%.2f Z%.2f\r\nE-Steps: M92 X%.2f Y%.2f Z%.2f E%.2f\r\nAcceleration: M201 X%.0f Y%.0f Z%.0f E%.0f\r\nMax Feedrate: M203 X%.0f Y%.0f Z%.0f E%.0f\r\nAcceleration: M204 P%.0f R%.0f T%.0f\r\nPID Settings: M301 P%.2f I%.2f D%.2f",
+//	sprintf(buffer, "Home offset: M218 T1 X%.2f Y%.2f Z%.2f\r\nZ-Probe Offset: M851 X%.2f Y%.2f Z%.2f\r\nE-Steps: M92 X%.2f Y%.2f Z%.2f E%.2f\r\nAcceleration: M201 X%.0f Y%.0f Z%.0f E%.0f\r\nMax Feedrate: M203 X%.0f Y%.0f Z%.0f E%.0f\r\nAcceleration: M204 P%.0f R%.0f T%.0f\r\nLinear Advance: M900 K-factor %.2f",
 					 LINEAR_UNIT(hotend_offset[1].x),
 					 LINEAR_UNIT(hotend_offset[1].y),
 					 LINEAR_UNIT(hotend_offset[1].z),
@@ -124,7 +125,10 @@ void DGUS_Screen_RestoreSetting::ShowReport(void)
 					 LINEAR_UNIT(planner.settings.acceleration),
 					 LINEAR_UNIT(planner.settings.retract_acceleration),
 					 LINEAR_UNIT(planner.settings.travel_acceleration),
-					 planner.extruder_advance_K[0]);
+					 PID_PARAM(Kp, 0), 
+					 unscalePID_i(PID_PARAM(Ki, 0)), 
+					 unscalePID_d(PID_PARAM(Kd, 0)));
+				//	 planner.extruder_advance_K[0]);
 					 
 
 	dserial.SendLongString(ADDR_2BINFO_TEXT_LINE, buffer, TEXTLEN_2BINFO_ITEM);

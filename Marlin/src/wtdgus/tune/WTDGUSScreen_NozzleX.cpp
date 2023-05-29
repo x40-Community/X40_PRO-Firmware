@@ -58,8 +58,8 @@ void DGUS_Screen_Nozzle_X::KeyProcess()
                 {
 					wtvar_tune_x1 = tempX;
 					wtvar_tune_y1 = tempY;
-					hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10;
-					hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10;
+					hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10 + ((float)wtvar_tune_x3 - 5) / 100;
+					hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10 + ((float)wtvar_tune_y3 - 5) / 100;
 					(void)settings.save();
 					Goback();
 				}
@@ -104,7 +104,7 @@ void DGUS_Screen_Nozzle_X::ShowButtonOn(uint8_t id)
 
 void DGUS_Screen_Nozzle_X::ShowPage(void)
 {
-    if (pageid == 0)
+    if (pageid == 0)  //X-Coarse tune 
     {
         dserial.SendString(ADDR_NOFFSET_BUTTON1_TEXT, "1(345)", TEXTLEN_NOFFSET_ITEM);
 		dserial.SendString(ADDR_NOFFSET_BUTTON2_TEXT, "2(346)", TEXTLEN_NOFFSET_ITEM);
@@ -128,9 +128,10 @@ void DGUS_Screen_Nozzle_X::ShowPage(void)
         dserial.SendLongString(ADDR_NOFFSET_TEXT, MMSG_NOZZLE_X_TEXT[wtvar_language], TEXTLEN_NOFFSET_TEXT);
 		ShowButtonOn(wtvar_tune_x1);
     }
-    else
+    else      //Y-Coarse tune
     {
-        dserial.SendString(ADDR_NOFFSET_BUTTON1_TEXT, "1(-2)", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_TITLE, MMSG_NOZZLE_Y_TITLE[wtvar_language], TEXTLEN_NOFFSET_TITLE);
+		dserial.SendString(ADDR_NOFFSET_BUTTON1_TEXT, "1(-2)", TEXTLEN_NOFFSET_ITEM);
 		dserial.SendString(ADDR_NOFFSET_BUTTON2_TEXT, "2(-1)", TEXTLEN_NOFFSET_ITEM);
 		dserial.SendString(ADDR_NOFFSET_BUTTON3_TEXT, "3(0)", TEXTLEN_NOFFSET_ITEM);
 		dserial.SendString(ADDR_NOFFSET_BUTTON4_TEXT, "4(1)", TEXTLEN_NOFFSET_ITEM);

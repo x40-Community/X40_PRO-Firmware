@@ -89,11 +89,10 @@ void DGUS_Screen_Nozzle_Z::KeyProcess()
 			{
 				if (pageid == 1)
 				{
-					pageid = 2;
+					pageid = 2; 
                     status = NSE_STEP2_MOVING;
 					dgus.ShowMovingMessage();
                     queue.enqueue_one_now("G28");
-               //   queue.enqueue_one_now("G29");
 					queue.enqueue_one_now("M420 S1"); //X40 PRO
                     queue.enqueue_one_now("G1 X125 Y150 F3000");
                     queue.enqueue_one_now("M605 S0");
@@ -138,14 +137,14 @@ void DGUS_Screen_Nozzle_Z::KeyProcess()
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_DEC)
 			{
-				zoffset_current -= 0.1;
+				zoffset_current -= 0.02;
 				current_position[Z_AXIS] -= 0.1;
 				manual_move_to_current(Z_AXIS);
 				ShowZOffset();
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_ADD)
 			{
-				zoffset_current += 0.1;
+				zoffset_current += 0.02;
 				current_position[Z_AXIS] += 0.1;
 				manual_move_to_current(Z_AXIS);
 				ShowZOffset();
@@ -211,11 +210,14 @@ void DGUS_Screen_Nozzle_Z::move_to_z(float value)
     queue.enqueue_one_now(buffer);
 }
 
-void DGUS_Screen_Nozzle_Z::End(void)
+void DGUS_Screen_Nozzle_Z::End(void) 
 {
-    queue.enqueue_one_now("G28 X R20");
+	queue.enqueue_one_now("G90");  //X40 PRO
+	queue.enqueue_one_now("G1 Z20 F2000");
+    queue.enqueue_one_now("G28 R0 X"); //X40 PRO
     queue.enqueue_one_now("M605 S1");
     queue.enqueue_one_now("M18");
+	queue.enqueue_one_now("T0 S"); //X40 PRO
     Goback();
 }
 

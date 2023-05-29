@@ -19,7 +19,7 @@ void DGUS_Screen_Nozzle_Y::Init()
 {
 	dserial.LoadScreen(SCREEN_NOZZLE_OFFSET);
 
-	dserial.SendString(ADDR_NOFFSET_TITLE, MMSG_NOZZLE_XY_TITLE[wtvar_language], TEXTLEN_NOFFSET_TITLE);
+	dserial.SendString(ADDR_NOFFSET_TITLE, MMSG_NOZZLE_X_FINE_TITLE[wtvar_language], TEXTLEN_NOFFSET_TITLE);
 	dserial.SendString(ADDR_NOFFSET_RETURN_TEXT, MMSG_CANCEL[wtvar_language], TEXTLEN_NOFFSET_BUTTON);
  
     dserial.SendInt16(ADDR_NOFFSET_BUTTON6_ICON, 1);
@@ -29,7 +29,9 @@ void DGUS_Screen_Nozzle_Y::Init()
     dserial.SendInt16(ADDR_NOFFSET_BUTTON10_ICON, 1);
 
     tempX = wtvar_tune_x2;
+    finetempX = wtvar_tune_x3;
     tempY = wtvar_tune_y2;
+    finetempY = wtvar_tune_y3;
 
     pageid = 0;
     ShowPage();
@@ -60,12 +62,24 @@ void DGUS_Screen_Nozzle_Y::KeyProcess()
                     pageid = 1;
                     ShowPage();
                 }
+                else if (pageid == 1)
+                {
+                    pageid = 2;
+                    ShowPage();
+                }
+                else if (pageid == 2)
+                {
+                    pageid = 3;
+                    ShowPage();
+                }
                 else
                 {
                     wtvar_tune_x2 = tempX;
+                    wtvar_tune_x3 = finetempX;
                     wtvar_tune_y2 = tempY;
-                    hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10;
-                    hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10;
+                    wtvar_tune_y3 = finetempY;
+                    hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10 + ((float)wtvar_tune_x3 - 5) / 100;
+                    hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10 + ((float)wtvar_tune_y3 - 5) / 100;
                     (void)settings.save();
                     Goback();
                 }
@@ -117,7 +131,7 @@ void DGUS_Screen_Nozzle_Y::KeyProcess()
 
 void DGUS_Screen_Nozzle_Y::ShowPage(void)
 {
-    if (pageid == 0)
+    if (pageid == 0)  //X-Fine tune
     {
         dserial.SendString(ADDR_NOFFSET_BUTTON1_TEXT, "1(-0.4)", TEXTLEN_NOFFSET_ITEM);
         dserial.SendString(ADDR_NOFFSET_BUTTON2_TEXT, "2(-0.3)", TEXTLEN_NOFFSET_ITEM);
@@ -134,8 +148,27 @@ void DGUS_Screen_Nozzle_Y::ShowPage(void)
         dserial.SendLongString(ADDR_NOFFSET_TEXT, MMSG_NOZZLE_Y1_TEXT[wtvar_language], TEXTLEN_NOFFSET_TEXT);
         ShowButtonOn(wtvar_tune_x2);
     }
-    else
+    else if (pageid == 1)  //X-Superfine tune
     {
+        dserial.SendString(ADDR_NOFFSET_TITLE, MMSG_NOZZLE_X_SUPERFINE_TITLE[wtvar_language], TEXTLEN_NOFFSET_TITLE);
+        dserial.SendString(ADDR_NOFFSET_BUTTON1_TEXT, " -0.04", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON2_TEXT, " -0.03", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON3_TEXT, " -0.02", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON4_TEXT, " -0.01", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON5_TEXT, "  0.00", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON6_TEXT, " +0.01", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON7_TEXT, " +0.02", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON8_TEXT, " +0.03", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON9_TEXT, " +0.04", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON10_TEXT, " +0.05", TEXTLEN_NOFFSET_ITEM);
+
+        dserial.SendString(ADDR_NOFFSET_NEXT_TEXT, MMSG_NEXT[wtvar_language], TEXTLEN_NOFFSET_BUTTON);
+        dserial.SendLongString(ADDR_NOFFSET_TEXT, MMSG_NOZZLE_X3_TEXT[wtvar_language], TEXTLEN_NOFFSET_TEXT);
+        ShowButtonOn(wtvar_tune_x3);
+    }
+    else if (pageid == 2)   //Y-Fine tune
+    {
+        dserial.SendString(ADDR_NOFFSET_TITLE, MMSG_NOZZLE_Y_FINE_TITLE[wtvar_language], TEXTLEN_NOFFSET_TITLE);
         dserial.SendString(ADDR_NOFFSET_BUTTON1_TEXT, "1(-0.4)", TEXTLEN_NOFFSET_ITEM);
         dserial.SendString(ADDR_NOFFSET_BUTTON2_TEXT, "2(-0.3)", TEXTLEN_NOFFSET_ITEM);
         dserial.SendString(ADDR_NOFFSET_BUTTON3_TEXT, "3(-0.2)", TEXTLEN_NOFFSET_ITEM);
@@ -147,9 +180,27 @@ void DGUS_Screen_Nozzle_Y::ShowPage(void)
 	    dserial.SendString(ADDR_NOFFSET_BUTTON9_TEXT, "9(+0.4)", TEXTLEN_NOFFSET_ITEM);
 	    dserial.SendString(ADDR_NOFFSET_BUTTON10_TEXT, "10(+0.5)", TEXTLEN_NOFFSET_ITEM);
 
-        dserial.SendString(ADDR_NOFFSET_NEXT_TEXT, MMSG_SAVE[wtvar_language], TEXTLEN_NOFFSET_BUTTON);
+        dserial.SendString(ADDR_NOFFSET_NEXT_TEXT, MMSG_NEXT[wtvar_language], TEXTLEN_NOFFSET_BUTTON);
         dserial.SendLongString(ADDR_NOFFSET_TEXT, MMSG_NOZZLE_Y2_TEXT[wtvar_language], TEXTLEN_NOFFSET_TEXT);
         ShowButtonOn(wtvar_tune_y2);
+    }
+    else                 //Y-Superfine tune
+    {
+        dserial.SendString(ADDR_NOFFSET_TITLE, MMSG_NOZZLE_Y_SUPERFINE_TITLE[wtvar_language], TEXTLEN_NOFFSET_TITLE);
+        dserial.SendString(ADDR_NOFFSET_BUTTON1_TEXT, " -0.04", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON2_TEXT, " -0.03", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON3_TEXT, " -0.02", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON4_TEXT, " -0.01", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON5_TEXT, "  0.00", TEXTLEN_NOFFSET_ITEM);
+        dserial.SendString(ADDR_NOFFSET_BUTTON6_TEXT, " +0.01", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON7_TEXT, " +0.02", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON8_TEXT, " +0.03", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON9_TEXT, " +0.04", TEXTLEN_NOFFSET_ITEM);
+	    dserial.SendString(ADDR_NOFFSET_BUTTON10_TEXT, " +0.05", TEXTLEN_NOFFSET_ITEM);
+
+        dserial.SendString(ADDR_NOFFSET_NEXT_TEXT, MMSG_SAVE[wtvar_language], TEXTLEN_NOFFSET_BUTTON);
+        dserial.SendLongString(ADDR_NOFFSET_TEXT, MMSG_NOZZLE_Y3_TEXT[wtvar_language], TEXTLEN_NOFFSET_TEXT);
+        ShowButtonOn(wtvar_tune_y3);
     }
 }
 
@@ -168,8 +219,12 @@ void DGUS_Screen_Nozzle_Y::ShowButtonOn(uint8_t id)
 	
     if (pageid == 0)
         tempX = id;
-    else
+    else if (pageid == 1)
+        finetempX = id;
+    else if (pageid == 2)
         tempY = id;
+    else
+        finetempY = id;
 }
 
 #endif

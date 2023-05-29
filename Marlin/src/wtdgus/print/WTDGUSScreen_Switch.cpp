@@ -60,18 +60,20 @@ void DGUS_Screen_Switch::KeyProcess()
 			{
 				if (active_extruder != 0)
 				{
-					dgus.ShowNoRetrunMessage(MMSG_WAITING[wtvar_language]);
+					dgus.ShowNoRetrunMessage(MMSG_CHANGEOVER[wtvar_language]);
 					chaning_tool = true;
 					wt_changetool();
+					queue.priority_enqueue_one_P(PSTR("M109 T1 S0")); // X40 PRO
 				}
 			}
 			else if (gltouchpara.value == KEY_2OPTION_BUTTON_ITEM2)
 			{
 				if (active_extruder != 1)
 				{
-					dgus.ShowNoRetrunMessage(MMSG_WAITING[wtvar_language]);
+					dgus.ShowNoRetrunMessage(MMSG_CHANGEOVER[wtvar_language]);
 					chaning_tool = true;
 					wt_changetool();
+					queue.priority_enqueue_one_P(PSTR("M109 T0 S0")); // X40 PRO
 				}
 			}
 		}

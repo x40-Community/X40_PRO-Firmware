@@ -106,9 +106,20 @@ const char MMSG_WAITING[8][16] PROGMEM = {
 	"待っています...",
 	"Esperando...",
     "Attendre...",
-    " warte...",
+    " warten...",
     "Inatteso...",
     "Even geduld..."
+};
+
+const char MMSG_CHANGEOVER[8][100] PROGMEM = {
+	" 喷嘴被加热以进行挤出机转换。 请稍等...",			// 
+	"Nozzle is heated up for extruder change\r\nover. Please wait...",
+	" ノズルは押出機の切り替えのために加熱されます。 お待ちください...",
+	"La boquilla se calienta para cambiar la\r\nextrusora. Espere por favor...",
+    "La buse est chauffée pour le changement\r\nd'extrudeuse. S'il vous plaît, attendez...",
+    "Düse wird für Extruderwechsel aufgeheizt.\r\nBitte warten...",
+    "L'ugello viene riscaldato per il cambio\r\ndell'estrusore. Attendere prego...",
+    "Nozzle wordt opgewarmd voor\r\nextruderwissel. Even geduld aub..."
 };
 
 const char MMSG_OTA_LINE[8][150] PROGMEM = {
@@ -795,7 +806,7 @@ const char MMSG_SETTING[8][15] PROGMEM = {
 
 const char MMSG_YES[8][7] PROGMEM = {
 	"  确定",
-	"  YES",
+	"  Yes",
 	"  はい",
 	"  Si",
     "  OUI",
@@ -806,7 +817,7 @@ const char MMSG_YES[8][7] PROGMEM = {
 
 const char MMSG_NO[8][8] PROGMEM = {
 	"  取消",
-	"  NO",
+	"  No",
 	" いいえ",
 	"  NO",
     "  NON",
@@ -1191,11 +1202,11 @@ const char MMSG_JOB_TITLE[8][22] PROGMEM = {
 
 const char MMSG_RETURN_HOME[8][20] PROGMEM = {
 	"   返回原点",
-	" Return Home",
+	"  Auto Home",
 	"  原点に戻る",
 	"Volver a origen",
     "   Accueil",
-    "   Zuhause",
+    "  Auto Home",
     " Torna a casa",
     "  Keer Terug"
 };
@@ -1969,7 +1980,7 @@ const char MMSG_HELP_WIKI[8][22] PROGMEM = {
 
 const char MMSG_HELP_CONTACT[8][22] PROGMEM = {
 	"    联系我们",
-	"   Contact Us",
+	"   Contact us",
  	"  お問い合わせ",
 	"    Contacto",
     " Nous contacter",
@@ -2205,7 +2216,7 @@ const char MMSG_CONFIG_LOAD_OK[8][54]PROGMEM = {
 
 const char MMSG_STORE_TITLE[8][19]PROGMEM = {
 	"存储器",		
-	"Disk",
+	"Storage",
 	"ディスク",
 	"Disco",
     "Disque",
@@ -2440,7 +2451,7 @@ const char MMSG_WIKI_URL[] PROGMEM = {
 
 const char MMSG_CONTACT_TITLE[8][22] PROGMEM = {
 	"联系我们",
-	"Contact Us",
+	"Contact us",
  	"お問い合わせ",
 	"Contáctenos",
     "Nous contacter",
@@ -2606,14 +2617,25 @@ const char MMSG_NOZZLE_Z_OFFSET[8][20] PROGMEM = {
 };
 
 const char MMSG_NOZZLE_X_TITLE[8][55] PROGMEM = {
-	"喷头XY偏置粗调",
- 	"Nozzle XY Offset Coarse Tune",
-	"ノズルXYオフセット粗調整",
-	"Boquilla XY Offset Coarse Tune",
-    "Réglage grossier décalé de la buse XY",
-    "Düsen XY-Versatz (Offset) Grobeinstellung",
-    "Regolazione approssimativa dell'offset dell'ugello XY.",
-    "Printkop XY Afstand"
+	"喷头X偏置粗调",
+ 	"Nozzle X Offset Coarse Tune",
+	"ノズルXオフセット粗調整",
+	"Boquilla X Offset Coarse Tune",
+    "Réglage grossier décalé de la buse X",
+    "Düsen X-Versatz Grobeinstellung",
+    "Regolazione approssimativa dell'offset dell'ugello X.",
+    "Printkop X Afstand"
+};
+
+const char MMSG_NOZZLE_Y_TITLE[8][55] PROGMEM = {
+	"喷头Y偏置粗调",
+ 	"Nozzle Y Offset Coarse Tune",
+	"ノズルYオフセット粗調整",
+	"Boquilla Y Offset Coarse Tune",
+    "Réglage grossier décalé de la buse Y",
+    "Düsen Y-Versatz Grobeinstellung",
+    "Regolazione approssimativa dell'offset dell'ugello Y.",
+    "Printkop Y Afstand"
 };
 
 const char MMSG_NOZZLE_X_TEXT[8][190] PROGMEM = {
@@ -2627,15 +2649,48 @@ const char MMSG_NOZZLE_X_TEXT[8][190] PROGMEM = {
     "Print het bestand NozzleCoarseTune.gcode.\r\nSelecteer het nummer van het blokje met de kleinste horizontale afwijking en klik op Volgende."
 };
 
-const char MMSG_NOZZLE_XY_TITLE[8][46] PROGMEM = {
-	"喷头XY偏置精调",
- 	"Nozzle XY Offset Fine Tune",
-	"印字ヘッドXYオフセット微調整",
-	"Boquilla XY Offset Fine Tune",
-    "Réglage précis du décalage XY de la buse",
-    "Düsen XY-Versatz (Offset) Feineinstellung",
-    "Regolazione fine offset XY ugello",
-    "Printkop XY Afstand Fijne Afstelling"
+const char MMSG_NOZZLE_X_FINE_TITLE[8][46] PROGMEM = {
+	"喷头X偏置精调",
+ 	"Nozzle X Offset Fine Tune",
+	"印字ヘッドXオフセット微調整",
+	"Boquilla X Offset Fine Tune",
+    "Réglage précis du décalage X de la buse",
+    "Düsen X-Versatz Feineinstellung",
+    "Regolazione fine offset X ugello",
+    "Printkop X Afstand Fijne Afstelling"
+};
+
+const char MMSG_NOZZLE_X_SUPERFINE_TITLE[8][46] PROGMEM = {
+	"喷头X偏移超微调",
+ 	"Nozzle X Offset Super Fine Tune",
+	"プリントヘッド X オフセット超微調整",
+	"Boquilla X Offset Fine Tune",
+    "Réglage super fin du décalage X de la buse",
+    "Düsen X-Versatz Superfeineinstellung",
+    "Regolazione super fine offset X ugello",
+    "Printkop X Afstand Superfijne Afstelling"
+};
+
+const char MMSG_NOZZLE_Y_FINE_TITLE[8][46] PROGMEM = {
+	"喷头Y偏置精调",
+ 	"Nozzle Y Offset Fine Tune",
+	"印字ヘッドYオフセット微調整",
+	"Boquilla Y Offset Fine Tune",
+    "Réglage précis du décalage Y de la buse",
+    "Düsen Y-Versatz Feineinstellung",
+    "Regolazione fine offset Y ugello",
+    "Printkop Y Afstand Fijne Afstelling"
+};
+
+const char MMSG_NOZZLE_Y_SUPERFINE_TITLE[8][46] PROGMEM = {
+	"喷头Y偏移超微调",
+ 	"Nozzle Y Offset Super Fine Tune",
+	"プリントヘッド Y オフセット超微調整",
+	"Boquilla Y Offset Fine Tune",
+    "Réglage super fin du décalage Y de la buse",
+    "Düsen Y-Versatz Superfeineinstellung",
+    "Regolazione super fine offset Y ugello",
+    "Printkop Y Afstand Superfijne Afstelling"
 };
 
 const char MMSG_NOZZLE_Y1_TEXT[8][180] PROGMEM = {
@@ -2649,16 +2704,40 @@ const char MMSG_NOZZLE_Y1_TEXT[8][180] PROGMEM = {
     "Print het bestand NozzleFineTune.gcode. Selecteer het nummer van het blokje met de kleinste horizontale afwijking en klik op Volgende."
 };
 
+const char MMSG_NOZZLE_X3_TEXT[8][180] PROGMEM = {
+	"打印棋盘图案并使用卡尺确定确切的 X 偏移量。 更正该值并使用新打印件进行检查。",
+	"Print the checkerboard pattern and determine the exact X offset with a caliper. Correct the value and check it with a new print.",
+ 	"チェッカーボード パターンを印刷し、ノギスで正確な X オフセットを決定します。 値を修正し、新しいプリントで確認してください。",
+	"Imprima el patrón de tablero de ajedrez y determine el desplazamiento X exacto con un calibrador. Corrija el valor y compruébelo con una nueva impresión.",
+    "Imprimez le motif en damier et déterminez le décalage X exact avec un pied à coulisse. Corrigez la valeur et vérifiez-la avec une nouvelle impression.",
+    "Drucken Sie das Schachbrettmuster und ermitteln mit einem Messschieber den exakten X-Versatz. Korrigieren Sie den Wert und überprüfen es durch eine neuen Druck.",
+    "Stampa il motivo a scacchiera e determina l'esatto offset X con un calibro. Correggere il valore e verificarlo con una nuova stampa.",
+    "Druk het dambordpatroon af en bepaal de exacte X -offset met een remklauw. Corrigeer de waarde en controleer deze met een nieuwe afdruk."
+};
+
+
 const char MMSG_NOZZLE_Y2_TEXT[8][150] PROGMEM = {
 	"选择垂直方向两层偏差最小的测试块上的数字, 点击保存完成设置.",
-	"Select the number on the block with the smallest deviation between the two vertical layers, and Save.",
+	"Select the number on the block with the smallest deviation between the two vertical layers.",
  	"2つの垂直レイヤー間の偏差が最も小さいテストブロックの番号を選択し, [保存]をクリックして設定を完了します.",
 	"Seleccione el número en el bloque con la desviación más pequena entre las dos capas verticales y Guardar.",
     "Sélectionnez le numéro sur le bloc présentant le plus petit écart entre les deux couches verticales et enregistrez.",
-    "Wahlen Sie die Nummer des Blocks mit der geringsten Abweichung zwischen den beiden vertikalen Schichten und klicken Sie auf Speichern.",
+    "Wahlen Sie die Nummer des Blocks mit der geringsten Abweichung zwischen den beiden vertikalen Schichten.",
     "Seleziona il numero sul blocco con la deviazione più piccola tra i due strati verticali e Salva.",
     "Selecteer het nummer van het blokje met de kleinste afwijking tussen de twee vertikale lagen en kies Opslaan."
 };
+
+const char MMSG_NOZZLE_Y3_TEXT[8][180] PROGMEM = {
+	"打印棋盘图案并使用卡尺确定确切的 Y 偏移量。 更正该值并使用新打印件进行检查。",
+	"Print the checkerboard pattern and determine the exact Y offset with a caliper. Correct the value and check it with a new print.",
+ 	"チェッカーボード パターンを印刷し、ノギスで正確な Y オフセットを決定します。 値を修正し、新しいプリントで確認してください。",
+	"Imprima el patrón de tablero de ajedrez y determine el desplazamiento Y exacto con un calibrador. Corrija el valor y compruébelo con una nueva impresión.",
+    "Imprimez le motif en damier et déterminez le décalage Y exact avec un pied à coulisse. Corrigez la valeur et vérifiez-la avec une nouvelle impression.",
+    "Drucken Sie das Schachbrettmuster und ermitteln mit einem Messschieber den exakten Y-Versatz. Korrigieren Sie den Wert und überprüfen es durch eine neuen Druck.",
+    "Stampa il motivo a scacchiera e determina l'esatto offset Y con un calibro. Correggere il valore e verificarlo con una nuova stampa.",
+    "Druk het dambordpatroon af en bepaal de exacte Y -offset met een remklauw. Corrigeer de waarde en controleer deze met een nieuwe afdruk."
+};
+
 
 const char MMSG_NOZZLE_Z_TITLE[8][40] PROGMEM = {
 	"喷头Z偏置调节",
@@ -2794,33 +2873,33 @@ const char MMSG_BABYSTEP_TIP[8][210] = {
 
 const char MMSG_SETTING_AUTOSWITCH[8][30]  = {
 	"  自动切换喷头",
-	"  Auto Switch",
+	"Auto change-over",
 	"  オートスイッチ",
 	"    Cambiar",
     "   Detecteur",
-    "   Schalter",
+    "Autom. umschalten",
     "  Interruttore",
 	"   Schakelaar"
 };
 
 const char MMSG_SETTING_MANUALSWITCH[8][30]  = {
 	"  手动切换喷头",
-	" Manually Switch",
+	"Manual change-over",
 	"  手動スイッチ",
 	"    Manual",
     "    Manuel",
-    " Düsenwechsel",
+    "Manuell umschalten",
     "   Manuale",
 	"  Handleiding"
 };
 
 const char MMSG_TITLE_MANUALSWITCH[8][40]  = {
 	"手动切换喷头",
-	"Manually Switch Nozzle",
+	"Manually Extruder change-over",
 	"手動でノズルを切り替える",
 	"Cambiar manualmente la boquilla",
     "Changer manuellement de buse",
-    "Düse manuell wechseln",
+    "Extruder manuell umschalten",
     "Cambia ugello manualmente",
 	"Handmatig van mondstuk wisselen"
 };

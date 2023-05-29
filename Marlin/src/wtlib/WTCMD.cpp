@@ -577,6 +577,21 @@ void wt_save_config()
 		goto END;
 	}
 
+
+	ZERO(buffer);
+	sprintf(buffer, "M301 P%.2f I%.2f D%.2f",
+					 PID_PARAM(Kp, 0), 
+					 unscalePID_i(PID_PARAM(Ki, 0)),
+					 unscalePID_d(PID_PARAM(Kd, 0)));
+	if (!card.write_line(buffer))
+	{
+		SERIAL_ECHOLNPGM("Write to config save file fail.");
+		#ifdef DGUS_LCD
+		dgus.ShowLog(MMSG_CONFIG_WRITE_FAIL[wtvar_language]);
+		#endif
+		goto END;
+	}
+
 	ZERO(buffer);
 	sprintf(buffer, ";%s config data end", MACHINE_NAME);
 	if (!card.write_line(buffer))
@@ -1033,8 +1048,8 @@ void WTCMD_Process()
         break;
 
     case 228:      
-        hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10;
-        hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10;
+        hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10 + ((float)wtvar_tune_x3 - 5) / 100;
+        hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10 + ((float)wtvar_tune_y3 - 5) / 100;
         break;
 
     case 299:      
@@ -1092,7 +1107,7 @@ void WTCMD_Process()
 		break;
 
 	case 311:			
-		ParseStringArg(gcodeinfo.info.filament, 10);
+		ParseStringArg(gcodeinfo.info.tool, 10);
 		break;
 
 	case 312:			

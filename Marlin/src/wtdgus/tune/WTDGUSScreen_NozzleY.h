@@ -18,7 +18,9 @@ public:
 
 private:
     uint8_t tempX;
+    uint8_t finetempX;
     uint8_t tempY;
+    uint8_t finetempY;
     uint8_t pageid = 0;
     
 	void ShowButtonOn(uint8_t id);

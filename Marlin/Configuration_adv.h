@@ -1164,7 +1164,8 @@
  * See http://marlinfw.org/docs/features/lin_advance.html for full instructions.
  * Mention @Sebastianv650 on GitHub to alert the author of any issues.
  */
-#define LIN_ADVANCE
+// Linear Advanced doesn't work with Marlin 2.0.5 and TMC2280 driver. See Marlin Homepage!
+//#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   //Default was K 0.22

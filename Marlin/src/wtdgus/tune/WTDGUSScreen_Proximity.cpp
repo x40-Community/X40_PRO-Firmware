@@ -72,6 +72,8 @@ void DGUS_Screen_Proximity::KeyProcess()
 			{
 				dgus.ShowMovingMessage();
 				queue.enqueue_now_P(PSTR("G28"));
+				queue.enqueue_now_P(PSTR("G1 Z20 F2000"));  //X40 PRO
+				queue.enqueue_now_P(PSTR("G28 R0 X")); //X40 PRO
 				queue.enqueue_now_P(PSTR("M18"));
 				zState = PSE_END;
 			}

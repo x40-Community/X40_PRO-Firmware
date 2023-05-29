@@ -81,8 +81,10 @@ uint8_t wtvar_counter = 0;
 uint8_t wtvar_skipTest = 0;
 uint8_t wtvar_tune_x1 = 3;
 uint8_t wtvar_tune_x2 = 5;
+uint8_t wtvar_tune_x3 = 5;
 uint8_t wtvar_tune_y1 = 3;
 uint8_t wtvar_tune_y2 = 5;
+uint8_t wtvar_tune_y3 = 5;
 uint8_t wtvar_runout = 0;
 uint8_t wtvar_autoswith = 0;
 uint32_t nowtime;
@@ -925,17 +927,17 @@ void stop()
  *  - Print startup messages and diagnostics
  *  - Get EEPROM or default settings
  *  - Initialize managers for:
- *    â€? temperature
- *    â€? planner
- *    â€? watchdog
- *    â€? stepper
- *    â€? photo pin
- *    â€? servos
- *    â€? LCD controller
- *    â€? Digipot I2C
- *    â€? Z probe sled
- *    â€? status LEDs
- *    â€? Max7219
+ *    ï¿½? temperature
+ *    ï¿½? planner
+ *    ï¿½? watchdog
+ *    ï¿½? stepper
+ *    ï¿½? photo pin
+ *    ï¿½? servos
+ *    ï¿½? LCD controller
+ *    ï¿½? Digipot I2C
+ *    ï¿½? Z probe sled
+ *    ï¿½? status LEDs
+ *    ï¿½? Max7219
  */
 void setup()
 {

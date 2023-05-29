@@ -66,13 +66,13 @@ const char HELP_TIP03_LINE2[8][180] PROGMEM = {
     "Auto Power Off: Zet printer automatisch uit na het printen.\r\nRunout Sensor: filament detectie.\r\nBabystep Z: Pas de z-as in realtime aan."
 };
 
-const char HELP_TIP03_LINE3[8][390] PROGMEM = {
+const char HELP_TIP03_LINE3[8][410] PROGMEM = {
 	"自动切换喷头: 检测到断丝后, 自动切换到另一个喷头继续打印.\r\n手动切换喷头: 手动切换至另一个喷头继续打印.\r\n保存关机: 保存当前打印任务并自动关机, 重新上电后可以继续打印",
-	"Auto Switch: After filament runout, it will automatically switch to another nozzle to resume the printing job.\r\nManual Switch: Manually switch to another nozzle to continue printing.\r\nSave&Off: Save the current job and shut down, you can resume the printing after powering up again.",
+	"Auto change-over: After filament runout, it will automatically change-over to another extruder to resume the printing job.\r\nManual change-over: Manually change-over to another extruder to continue printing.\r\nSave&Off: Save the current job and shut down, you can resume the printing after powering up again.",
 	"オートスイッチ: フィラメントがなくなった後, 自動的に別のノズルに切り替わり, 印刷ジョブを再開します.\r\n手動スイッチ: 手動で別のノズルに切り替えて, 印刷を続行します.\r\n印刷を保存: 現在のジョブを保存してシャットダウンします. 電源を入れ直すと印刷を再開できます.",
 	"Cambiar: Despues de que se agote el filamento, cambiara automáticamente a otra boquilla para reanudar el trabajo de impresion.\r\nManual: Cambie manualmente a otra boquilla para continuar imprimiendo.\r\nGuardar impresión: guarde el trabajo actual y cierre,puede reanudar la impresión después de volver a encenderlo.",
     "Detecteur: Despues de que se agote el filamento, cambiara automáticamente a otra boquilla para reanudar el trabajo de impresion.\r\nManuel: Basculez manuellement vers une autre buse pour continuer l'impression.\r\nEnregistrer et désactiver: enregistrez le travail en cours et arrêtez, vous pouvez reprendre l'impression après la mise sous tension.",
-    "Schalter: Nach Ablauf des Filaments wird automatisch auf eine andere Duse umgeschaltet, um den Druckauftrag fortzusetzen.\r\nHandbuch: Wechseln Sie manuell zu einer anderen Duse, um mit dem Drucken fortzufahren.\r\nSpeichern&Ausschalten: Speichere den aktuellen Druckauftrag und schalte den Drucker aus. Der Druck kann nach Wiedereinschalten des Druckers fortgesetzt werden.",
+    "Automatisch umschalten: Nach Leerlauf des Filaments wird automatisch auf den anderen Extruder umgeschaltet, um den Druckauftrag fortzusetzen.\r\nManuell umschalten: Wechseln Sie manuell zu einem anderen Extruder, um mit dem Drucken fortzufahren.\r\nSpeichern&Ausschalten: Speichere den aktuellen Druckauftrag und schalte den Drucker aus. Der Druck kann nach Wiedereinschalten des Druckers fortgesetzt werden.",
     "Interruttore: Dopo l'esaurimento del filamento, passerà automaticamente a un altro ugello per riprendere il lavoro di stampa.\r\nManuale: Passare manualmente a un altro ugello per continuare a stampare.\r\nSalva e spegni: salva il lavoro corrente e chiudi, puoi riprendere la stampa dopo l'accensione.",
     "Schakelaar: Als het filament op is, schakelt het automatisch over naar een ander mondstuk om de afdruktaak te hervatten.\r\nHandleiding: Schakel handmatig over naar een ander mondstuk om door te gaan met afdrukken.\r\nOpslaan&Uitzetten: Sla huidige printopdracht op en zet uit, na herstarten kan de printopdracht hervat worden."
 };
@@ -176,13 +176,13 @@ const char HELP_TIP11_LINE[8][280] PROGMEM = {
 
 
 // TIP12 设置界面2
-const char HELP_TIP12_LINE[8][250] PROGMEM = {
+const char HELP_TIP12_LINE[8][270] PROGMEM = {
 	"打印完成关机: 打印任务完成后自动关闭电源.\r\n料丝检测: 启用或禁用料丝检测功能.\r\n自动切换喷头: 检测到断丝后, 自动切换到另一个喷头继续打印.",
-	"Auto Power Off: Automatic shutdown after printing.\r\nRunout Sensor: filament detection.\r\nAuto Switch: After filament runout, it will automatically switch to another nozzle to resume the printing job.",
+	"Auto Power Off: Automatic shutdown after printing.\r\nRunout Sensor: filament detection.\r\nAuto change-over: After filament runout, it will automatically change-over to another extruder to resume the printing job.",
 	"プリントオフ: 印刷後の自動シャットダウン.\r\n振れセンサー：フィラメント検出.\r\nオートスイッチ: フィラメントがなくなった後, 自動的に別のノズルに切り替わり, 印刷ジョブを再開します.",
 	"Apagado automático: apagado automático después de.\r\nRunout Sensor: detección de filamento.\r\nCambiar: Despues de que se agote el filamento, cambiara automáticamente a otra boquilla para reanudar el trabajo de impresion.",
     "Arrêt automatique: arrêt automatique après l'impression.\r\nCapteur de voile: détection de filament.\r\nDetecteur: Despues de que se agote el filamento, cambiara automáticamente a otra boquilla para reanudar el trabajo de impresion.",
-    "Auto Power Off: Schaltet den Drucker nach Beendigung des Druckes aus.\r\nFilamentsensor: Prüft auf vorhandenes Filament.\r\nSchalter: Nach Ablauf des Filaments wird automatisch auf eine andere Duse umgeschaltet, um den Druckauftrag fortzusetzen.",
+    "Auto Power Off: Schaltet den Drucker nach Beendigung des Druckes aus.\r\nFilamentsensor: Prüft auf vorhandenes Filament.\r\nAutomatisch umschalten: Nach Leerlauf des Filaments wird automatisch auf den andere Extruder umgeschaltet, um den Druckauftrag fortzusetzen.",
     "Spegnimento automatico: spegnimento automatico dopo la stampa.\r\nSensore di runout: rilevamento del filamento.\r\nInterruttore: Dopo l'esaurimento del filamento, passerà automaticamente a un altro ugello per riprendere il lavoro di stampa.",
     "Auto Power Off: Zet printer automatisch uit na het printen.\r\nRunout Sensor: filament detectie.\r\nSchakelaar: Als het filament op is, schakelt het automatisch over naar een ander mondstuk om de afdruktaak te hervatten."
 };
@@ -190,11 +190,11 @@ const char HELP_TIP12_LINE[8][250] PROGMEM = {
 // TIP13 设置界面3
 const char HELP_TIP13_LINE[8][440] PROGMEM = {
 	"开机自检: 打印时启动时, 自动对主要部件进行检测.\r\n节电模式: 打印处于待机状态，且无操作时，在等待一段时间后自动关闭电源，以节约能源.\r\n固件参数: 保存, 读取或恢复固件参数.",
-	"Post: Automatic testing the main parts when printer power on.\r\nPower Save Mode: When printing is in standby mode and there is no operation, it will automatically turn off the power after waiting for a period of time to save energy.\r\nFirmware Parameters: save, load or restore firmware parameters.",
+	"Self-test: Automatic testing the main parts when printer power on.\r\nPower Save Mode: When printing is in standby mode and there is no operation, it will automatically turn off the power after waiting for a period of time to save energy.\r\nFirmware Parameters: save, load or restore firmware parameters.",
 	"セルフテスト: プリンタの電源が入ったときに主要部品を自動的にテストします.\r\n節電モード: 印刷待機中に何も操作しないときは, 一定時間待ってから自動的に電源が切れます.\r\nファームウェアパラメーター：ファームウェアパラメータを保存, ロード, または復元します.",
 	"Autoprueba: Prueba automática de las partes principales cuando la impresora está encendida.\r\nAhorro de energía: cuando la impresión está en modo de espera y no se realiza ninguna operación, se apagará automáticamente después de esperar un período de tiempo para ahorrar energía.\\r\nParámetros del firmware: guardar, cargar o restaurar parámetros de firmware.",
     "Post: test automatique des pièces principales lors de la mise sous tension de l'imprimante.\r\nMode d'économie d'énergie: lorsque l'impression est en mode veille et qu'aucune opération n'est effectuée, l'appareil s'éteindra automatiquement après avoir attendu pendant un certain temps pour économiser de l'énergie.\r\nParamètres du micrologiciel: enregistrez, chargez ou restaurez les paramètres du micrologiciel.",
-    "Post: Testet den Drucker nach dem Einschalten zuerst automatisch auf etwaige Fehler.\r\nPower Save Mode: Um Strom zu sparen wird der Drucker ausgeschaltet, wenn er eine vorgegebene Zeit inaktiv ist.\r\nFirmware Parameter: speichern, laden oder wiederherstellen der FW-Parameter.",
+    "Druckerselbsttest: Testet den Drucker nach dem Einschalten zuerst automatisch auf etwaige Fehler.\r\nPower Save Mode: Um Strom zu sparen wird der Drucker ausgeschaltet, wenn er eine vorgegebene Zeit inaktiv ist.\r\nFirmware Parameter: speichern, laden oder wiederherstellen der FW-Parameter.",
     "Post: verifica automatica delle parti principali all'accensione della stampante.\r\nModalità risparmio energetico: quando la stampa è in modalità standby e non viene eseguita alcuna operazione, l'alimentazione verrà automaticamente disattivata dopo aver atteso un periodo di tempo per risparmiare energia.\r\nParametri firmware: salva, carica o ripristina i parametri del firmware.",
     "Post: Automatische controle van de belangrijkste printer onderdelen bij het aanzetten.\r\nPower Save Modus: Als de printer op standby staat en er geen activiteit gaande is, schakelt de printer zichzelf automatisch uit na de ingestelde tijdsduur om energie te besparen.\r\nFirmware Instellingen: Opslaan, Openen, of Terugzetten van firmware instellingen."
 };

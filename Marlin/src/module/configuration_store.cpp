@@ -376,8 +376,10 @@ typedef struct SettingsDataStruct {
   uint8_t wtvar_counter;
   uint8_t wtvar_tune_x1;
   uint8_t wtvar_tune_x2;
+  uint8_t wtvar_tune_x3;
   uint8_t wtvar_tune_y1;
   uint8_t wtvar_tune_y2;
+  uint8_t wtvar_tune_y3;
   uint8_t wtvar_autoswith;
 } SettingsData;
 
@@ -1327,8 +1329,10 @@ void MarlinSettings::postprocess() {
     // save nozzle offset tune
     EEPROM_WRITE(wtvar_tune_x1);
     EEPROM_WRITE(wtvar_tune_x2);
+    EEPROM_WRITE(wtvar_tune_x3);
     EEPROM_WRITE(wtvar_tune_y1);
     EEPROM_WRITE(wtvar_tune_y2);
+    EEPROM_WRITE(wtvar_tune_y3);
 
     // save auto switch option
     EEPROM_WRITE(wtvar_autoswith);
@@ -2220,6 +2224,11 @@ void MarlinSettings::postprocess() {
       if(wtvar_tune_x2 > 10 || wtvar_tune_x2 < 1)
           wtvar_tune_x2 = 5;
 
+      EEPROM_READ(wtvar_tune_x3);
+
+      if(wtvar_tune_x3 > 10 || wtvar_tune_x3 < 1)
+          wtvar_tune_x3 = 5;
+
       EEPROM_READ(wtvar_tune_y1);
 
       if (wtvar_tune_y1 > 5 || wtvar_tune_y1 <1)
@@ -2230,8 +2239,13 @@ void MarlinSettings::postprocess() {
       if(wtvar_tune_y2 > 10 || wtvar_tune_y2 < 1)
           wtvar_tune_y2 = 5;
       
-      hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10;
-      hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10;
+      EEPROM_READ(wtvar_tune_y3);
+
+      if(wtvar_tune_y3 > 10 || wtvar_tune_y3 < 1)
+          wtvar_tune_y3 = 5;
+
+      hotend_offset[1].x = T1_OFFSET_X + (wtvar_tune_x1 - 3) + ((float)wtvar_tune_x2 - 5) / 10 + ((float)wtvar_tune_x3 - 5) / 100;
+      hotend_offset[1].y = (wtvar_tune_y1 - 3) + ((float)wtvar_tune_y2 - 5) / 10 + ((float)wtvar_tune_y3 - 5) / 100;
 	
       EEPROM_READ(wtvar_autoswith);
       if (wtvar_autoswith != 1)

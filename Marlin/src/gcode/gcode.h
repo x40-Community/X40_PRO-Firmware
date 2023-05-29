@@ -264,6 +264,7 @@
  * M918 - L6470 tuning: Increase speed until max or error. (Requires at least one _DRIVER_TYPE L6470)
  * M922 - Enable/disable/query auto purge on tool-change
  * M923 - Enable/disable/query multiwipe on tool-change
+ * M924 - Change-over to extruder
  * M951 - Set Magnetic Parking Extruder parameters. (Requires MAGNETIC_PARKING_EXTRUDER)
  * M7219 - Control Max7219 Matrix LEDs. (Requires MAX7219_GCODE)
  *
@@ -977,6 +978,7 @@ private:
   #if MOTHERBOARD == BOARD_WEEDO_73B
     static void M922();
     static void M923();
+    static void M924();
     static void M0();
   #endif
 

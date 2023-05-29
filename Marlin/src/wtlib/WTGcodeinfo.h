@@ -20,8 +20,8 @@ typedef struct
 	char density[10];	
 	char temp0[10];			
 	char totaltime[10];		
-	char filament[10];		
-	float f_filament;		
+	char tool[10];		
+	float f_tool;		
 	uint32_t i_totaltime;	
 	char filename[27];		
 	bool b_image;			

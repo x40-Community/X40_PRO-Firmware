@@ -207,7 +207,8 @@ void DGUS_Screen_Levelbed::KeyProcess()
 					queue.enqueue_now_P(PSTR("G28"));
 					queue.enqueue_now_P(PSTR("G29"));
                     queue.enqueue_now_P(PSTR("G1 Z20 F1000"));
-				 	queue.enqueue_now_P(PSTR("G1 X-53 Y150 F5000"));
+				 	queue.enqueue_now_P(PSTR("G1 Y150 F5000"));
+					queue.enqueue_now_P(PSTR("G28 R0 X")); // X40 PRO
 					queue.enqueue_now_P(PSTR("M18"));
 
 					levelbedmanuelsts = LBSE_WAITDETECT;
@@ -236,6 +237,7 @@ void DGUS_Screen_Levelbed::KeyProcess()
 					dgus.ShowMovingMessage();
 					queue.enqueue_now_P(PSTR("G1 Z20 F600"));
 					queue.enqueue_now_P(PSTR("G28 X Y"));
+					queue.enqueue_now_P(PSTR("M18")); //X40 PRO
 					levelbedmanuelsts = LBSE_WAITCANCELLED;
 				}
 			}

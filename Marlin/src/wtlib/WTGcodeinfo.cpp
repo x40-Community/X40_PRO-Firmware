@@ -27,9 +27,9 @@ void WTGcodeinfo::reset(void)
 	strcpy_P(info.temp0, MSG_NONE);
 	memset(info.totaltime, 0, 10);
 	strcpy_P(info.totaltime, MSG_NONE);
-	memset(info.filament, 0, 10);
-	strcpy_P(info.filament, MSG_NONE);
-	info.f_filament = 0;
+	memset(info.tool, 0, 10);
+	strcpy_P(info.tool, MSG_NONE);
+	info.f_tool = 0;
 	info.i_totaltime = 0;
 	info.b_image = false;
     info.b_multi = false;
@@ -109,9 +109,9 @@ void WTGcodeinfo::parse(char* filename)
 		*			sprintf_P(info.filament, PSTR("%ig"), tempi);
 		*		}
 		*/
-				else if (startsWith(linebuffer, "Tool:"))
+				else if (startsWith(linebuffer, "Tool:"))   //X40 PRO
 				{
-					getvalue(info.filament);
+					getvalue(info.tool);
 				}
                 else if (startsWith(linebuffer, "MINX:"))
 				{

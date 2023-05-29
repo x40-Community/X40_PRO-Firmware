@@ -48,7 +48,7 @@ void DGUS_Screen_Preview::Init()
     }
 
     dserial.SendString(ADDR_PREVIEW_ITEM2, gcodeinfo.info.material, TEXTLEN_PREVIEW_DATA);
-    dserial.SendString(ADDR_PREVIEW_ITEM3, gcodeinfo.info.filament, TEXTLEN_PREVIEW_DATA);
+    dserial.SendString(ADDR_PREVIEW_ITEM3, gcodeinfo.info.tool, TEXTLEN_PREVIEW_DATA);
     dserial.SendString(ADDR_PREVIEW_ITEM4, gcodeinfo.info.layerheight, TEXTLEN_PREVIEW_TEXT);
     dserial.SendString(ADDR_PREVIEW_ITEM5, gcodeinfo.info.density, TEXTLEN_PREVIEW_TEXT);
     dserial.SendString(ADDR_PREVIEW_ITEM6, gcodeinfo.info.totaltime, TEXTLEN_PREVIEW_TEXT);

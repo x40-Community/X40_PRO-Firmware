@@ -224,6 +224,10 @@ void DGUS_Screen_Job::KeyProcess()
 			else if (gltouchpara.value == KEY_JOB_BUTTON1)
 			{
 				queue.enqueue_one_P(PSTR("G28"));
+                queue.enqueue_one_P(PSTR("G90"));  // X40 PRO
+                queue.enqueue_one_P(PSTR("G1 Z20 F2000"));  // X40 PRO
+                queue.enqueue_one_P(PSTR("G28 R0 X")); // X40 PRO
+                queue.enqueue_one_P(PSTR("M18")); // X40 PRO
 			}
 			else if (gltouchpara.value == KEY_JOB_BUTTON_HELP)
 			{
