@@ -19,7 +19,7 @@ Neither the X40 community nor Weedo provide help with the source code. If you wa
 If you want to publish a modified source code based on the X40 PRO data, please use a different name for the project so that nobody gets confused.
 
 ## Feature
-This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the community firmware 1.2.5 provided by Weedo. Besides bug fixes there are also the following features:
+This is the repository that contains the community version firmware for the WEEDO X40 PRO 3D Printer. The X40 PRO firmware is a further development of the [community firmware 1.2.5 provided by Weedo](https://github.com/weedo3d/WEEDOX40firmware). Besides bug fixes there are also the following features:
 - [25 Points bed leveling](https://www.youtube.com/watch?v=VdxImaRn2HA)
 - [XY-Offset SuperFine tuning with a settings accuray of 0.01mm](https://www.youtube.com/watch?v=hFpMcKlDiqc)
 - [Z-Offset Fine tinung with a settings accuray of 0.02mm](https://www.youtube.com/watch?v=PPG9tR3tM6Q)
