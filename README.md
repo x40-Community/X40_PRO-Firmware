@@ -8,7 +8,7 @@ Please note that proper [printer setup and calibration ](http://www.x40-communit
 
 The X40 PRO firmware has been optimized to work with Ultimaker Cura. If you use a different slicer, the printer may not work properly! [Please use Ultimaker Cura with X40 PRO Cura configuration to avoid any issues.](https://github.com/x40-Community/Cura_for_Weedo_X40_PRO)
 
-The Cura printing profiles are matched to the [X40 PRO Part Community cooling system.](https://github.com/x40-Community/X40_PRO-Community_Coolingsystem) If you use the original Weedo X40 Part cooling system, the settings may not be correct or the printing may not work properly!
+The Ultimaker Cura printing profiles are matched to the [X40 PRO Part Community cooling system.](https://github.com/x40-Community/X40_PRO-Community_Coolingsystem) If you use the original Weedo X40 Part cooling system, the settings may not be correct or the printing may not work properly!
 
 Please note that the High Temperature variant only works with the [High Temperature upgrade.](http://www.x40-community.org/index.php/firmware/x40-pro-high-temperature) Without the upgrade you will destroy the printer with highly toxic fumes!
 
