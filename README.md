@@ -4,7 +4,7 @@
 ## Information
 **The use of the community firmware is at your own risk. There is no liability whatsoever for any damage!** 
 
-If you search the web for Weedo X40 PRO, you may find other sources as well. Please note this is the original. Don't use unofficial sources!
+If you search the web for Weedo X40 PRO, you may find other sources as well. Don't use unofficial sources!
 
 Please note that proper [printer setup and calibration ](http://www.x40-community.org/index.php/the-3d-printer/weedo-x40-commissioning) is required. Just installing the firmware is not enough!
 
